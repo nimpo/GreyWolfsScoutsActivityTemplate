@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright 2022 Mike Jones, <dr.mike.jones@gmail.com>
+%% AKA Grey Wolf <mike.jones@mansouthscouts.org>
+%% AKA Akela <mike.jones@mansouthscouts.org>
+%% [23rd Manchester (Birch with Fallowfield)]
+%% Scout Membership number: 12114313
+%
+% This file is part of Grey Wolf's Scouts Activity Template.
+%
+% Grey Wolf's Scouts Activity Template is free software: you can redistribute
+% it and/or modify it under the terms of the GNU General Public License 
+% as published by the Free Software Foundation, either version 3 of the
+% License, or (at your option) any later version.
+%
+% Grey Wolf's Scouts Activity Template is distributed in the hope that it will
+% be useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+% of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+% General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with Grey Wolf's Scouts Activity Template.  If not, see 
+% <https://www.gnu.org/licenses/>.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{GreyWolfsScoutFleurDeLis}[2022/06/19 Grey Wolfs Scout tool to draw a Fleur-de-lis]
+
+\RequirePackage{etoolbox}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+% Define options 
+% width - the horizontal space to fit object into
+\def\fleur@width{100mm}
+\define@key{fleur}{width}{\def\fleur@width{#1}}
+
+% colour - the colour to draw lines
+\def\fleur@colour{black}
+\define@key{fleur}{colour}{\def\fleur@colour{#1}}
+
+% fillcolour - the fill colour to use defaults to colour
+\def\fleur@fillcolour{\fleur@colour}
+\define@key{fleur}{fillcolour}{\def\fleur@fillcolour{#1}}
+
+% fill (bool) - whether to fill
+\newif\iffleur@fill
+\define@key{fleur}{fill}[true]{\csname fleur@top#1\endcsname}
+
+% top (bool) align top with current box
+\newif\iffleur@top
+\define@key{fleur}{top}[true]{\csname fleur@top#1\endcsname}
+
+% bottom (bool) align bottom
+\newif\iffleur@bottom
+\define@key{fleur}{bottom}[true]{\csname fleur@bottom#1\endcsname}
+
+%To get ratio of (\lengthregister)/length
+%https://tex.stackexchange.com/questions/6417/how-to-find-the-ratio-of-a-length-command-e-g-textwidth-to-a-reference-valu
+\newcommand*{\DivideLengths}[2]{%
+  \strip@pt\dimexpr\number\numexpr\number\dimexpr#1\relax*65536/\number\dimexpr#2\relax\relax sp\relax%
+}
+
+\newcommand{\fillordraw}{\draw}
+
+%Draw a (default 100m wide purple fleur-de-lis outline) using tikz 
+\newcommand{\fleur}[1][]{%
+  \setkeys{fleur}{width=\textwidth}%
+  \setkeys{fleur}{colour=black}%
+  \setkeys{fleur}{fill=false}%
+  \setkeys{fleur}{fillcolour=\fleur@colour}%
+  \setkeys{fleur}{top=true}%
+  \setkeys{fleur}{bottom=false}%
+  \setkeys{fleur}{#1}%
+  \iffleur@fill\renewcommand{\fillordraw}{\filldraw}\else\renewcommand{\fillordraw}{\draw}\fi%
+%as created at 100mm wide
+%
+%https://tex.stackexchange.com/questions/39597/how-to-make-a-tikz-node-top-aligned-with-the-rest-of-the-text#answer-39601
+%{([yshift={-\ht\strutbox}]current bounding box.north)}
+%(current bounding box.south)
+%
+  \iffleur@bottom%
+    \begin{tikzpicture}[%
+      draw=\fleur@colour,%
+      fill=\fleur@fillcolour,%
+      y=1mm, x=1mm,%
+      xscale=\DivideLengths{\fleur@width}{100.86mm},% Actually not quite 100mm
+      yscale=\DivideLengths{\fleur@width}{100.86mm},% controls extend ±0.4262
+      inner sep=0pt, outer sep=0pt,%
+      baseline=(current bounding box.south)]%Last bit aligns top of pic to top + baselineskip (so it works in minipage more obviously)
+  \else%
+    \begin{tikzpicture}[%
+      draw=\fleur@colour,%
+      fill=\fleur@fillcolour,%
+      y=1mm, x=1mm,%
+      xscale=\DivideLengths{\fleur@width}{100.9mm},% Actually not quite 100mm
+      yscale=\DivideLengths{\fleur@width}{100.9mm},% 
+      inner sep=0pt, outer sep=0pt,%
+      baseline={([yshift={-\ht\strutbox}]current bounding box.north)}]% Last bit aligns top of pic to top + baselineskip (so it works in minipage more obviously)
+  \fi%
+%
+%Left petal
+  \fillordraw (26.4515,50.1588) .. controls (29.2292,45.9019) and (30.6295,41.0296) .. (31.0655,37.7246) -- (36.1377,37.7246) .. controls (35.7129,41.7628) and (34.0837,47.6798) .. (30.6718,52.9114) .. controls (26.6137,59.1353) and (21.3280,62.4273) .. (15.3904,62.4301) -- (15.3544,62.4301) .. controls (10.8258,62.4301) and (6.5884,60.3954) .. (3.7247,56.8452) .. controls (0.7130,53.1132) and (-0.4262,48.2868) .. (0.5980,43.6023) -- (5.5187,44.6795) .. controls (4.8321,47.8160) and (5.6276,51.1819) .. (7.6438,53.6820) .. controls (9.5762,56.0748) and (12.3117,57.3922) .. (15.3561,57.3922) -- (15.3815,57.3922) .. controls (20.6356,57.3890) and (24.3020,53.4570) .. (26.4515,50.1588);%
+%
+%Central petal
+  \fillordraw (41.1967,37.7246) -- (46.2684,37.7246) .. controls (45.6357,43.5683) and (43.3435,48.6607) .. (41.3118,53.1709) .. controls (39.2827,57.6711) and (37.3676,61.9229) .. (37.3953,66.1604) .. controls (37.4376,71.0327) and (40.2158,75.9994) .. (44.8288,79.4532) .. controls (45.6368,80.0619) and (47.9347,81.8248) .. (49.9999,83.7211) .. controls (52.0657,81.8248) and (54.3629,80.0619) .. (55.1716,79.4532) .. controls (59.7844,75.9994) and (62.5628,71.0327) .. (62.6050,66.1604) .. controls (62.6328,61.9229) and (60.7176,57.6711) .. (58.6886,53.1709) .. controls (56.6567,48.6607) and (54.3644,43.5683) .. (53.7319,37.7246) -- (58.8037,37.7246) .. controls (59.4307,42.5505) and (61.3879,46.8928) .. (63.2838,51.1020) .. controls (65.5423,56.1169) and (67.6767,60.8549) .. (67.6440,66.1982) .. controls (67.5856,72.6391) and (64.0535,79.0965) .. (58.1943,83.4824) .. controls (57.5033,84.0051) and (53.9085,86.7444) .. (51.8423,88.9694) -- (49.9999,90.9559) -- (48.1579,88.9694) .. controls (46.0917,86.7444) and (42.4969,84.0051) .. (41.8061,83.4824) .. controls (35.9467,79.0965) and (32.4147,72.6391) .. (32.3564,66.1982) .. controls (32.3235,60.8549) and (34.4576,56.1169) .. (36.7166,51.1020) .. controls (38.6123,46.8928) and (40.5697,42.5505) .. (41.1967,37.7246);%
+%
+%Right petal
+  \fillordraw (73.5489,50.1588) .. controls (70.7710,45.9019) and (69.3708,41.0296) .. (68.9347,37.7246) -- (63.8625,37.7246) .. controls (64.2875,41.7628) and (65.9165,47.6798) .. (69.3286,52.9114) .. controls (73.3867,59.1353) and (78.6722,62.4273) .. (84.6098,62.4301) -- (84.6459,62.4301) .. controls (89.1745,62.4301) and (93.4119,60.3954) .. (96.2757,56.8452) .. controls (99.2867,53.1132) and (100.4260,48.2868) .. (99.4022,43.6023) -- (94.4817,44.6795) .. controls (95.1681,47.8160) and (94.3728,51.1819) .. (92.3564,53.6820) .. controls (90.4241,56.0748) and (87.6887,57.3922) .. (84.6443,57.3922) -- (84.6188,57.3922) .. controls (79.3648,57.3890) and (75.6984,53.4570) .. (73.5489,50.1588);%
+%
+% Stalk
+  \fillordraw (63.0631,14.8673) .. controls (61.0908,17.5967) and (59.6540,20.8634) .. (59.0197,24.0065) -- (53.9013,24.0065) .. controls (54.2946,21.5526) and (55.3370,17.5001) .. (58.0843,13.2265) .. controls (56.3631,10.3437) and (53.2729,7.4995) .. (50.0053,5.7981) .. controls (50.0039,5.7985) and (50.0021,5.7999) .. (50.0000,5.8008) .. controls (49.9982,5.7999) and (49.9968,5.7985) .. (49.9950,5.7981) .. controls (46.7274,7.4995) and (43.6374,10.3437) .. (41.9162,13.2265) .. controls (44.6633,17.5001) and (45.7059,21.5526) .. (46.0992,24.0065) -- (40.9807,24.0065) .. controls (40.3464,20.8634) and (38.9094,17.5967) .. (36.9371,14.8673) -- (36.0806,13.6771) -- (36.6916,12.3421) .. controls (38.8300,7.6767) and (43.7683,2.9975) .. (48.9801,0.7003) -- (49.9926,0.2526) -- (49.9999,0.2558) -- (50.0070,0.2526) -- (51.0202,0.7003) .. controls (56.2313,2.9975) and (61.1704,7.6767) .. (63.3082,12.3421) -- (63.9198,13.6771) -- (63.0631,14.8673);%
+%
+%Woggle ;-)
+  \fillordraw (21.2249,33.2806) -- (21.2249,28.4516) -- (78.7755,28.4516) -- (78.7755,33.2806) -- (21.2249,33.2806) -- (21.2249,33.2806);%
+%
+\end{tikzpicture}}%

@@ -1,0 +1,2377 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Copyright 2022 Mike Jones, <dr.mike.jones@gmail.com>
+%% AKA Grey Wolf <mike.jones@mansouthscouts.org>
+%% AKA Akela <mike.jones@mansouthscouts.org>
+%% [23rd Manchester (Birch with Fallowfield)]
+%% Scout Membership number: 12114313
+%
+% This file is part of Grey Wolf's Scouts Activity Template.
+%
+% Grey Wolf's Scouts Activity Template is free software: you can redistribute
+% it and/or modify it under the terms of the GNU General Public License 
+% as published by the Free Software Foundation, either version 3 of the
+% License, or (at your option) any later version.
+%
+% Grey Wolf's Scouts Activity Template is distributed in the hope that it will
+% be useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+% of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+% General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with Grey Wolf's Scouts Activity Template.  If not, see 
+% <https://www.gnu.org/licenses/>.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{GreyWolfsScoutActivityBadges}[2022/06/19 Grey Wolfs Scout Activity Badges]
+
+% This file and the Badges/ directory is produced
+% by a noddy script which runs over 
+% a directory of svg files on Grey Wolf's Computer
+
+\RequirePackage{graphicx}
+\newlength{\badgewidth}
+\setlength{\badgewidth}{20mm} %default badge size
+\newlength{\badgeinfowidth}
+\setlength{\badgeinfowidth}{35mm}
+\def\badge@textsize{\small}
+\define@key{badge}{textsize}{\def\badge@textsize{#1}}
+\def\badge@SquirrelsActivityBadgeStoryTime{\@empty}
+\define@key{badge}{SquirrelsActivityBadgeStoryTime}{\def\badge@SquirrelsActivityBadgeStoryTime{#1}}
+\def\badge@BeaversActivityBadgeActivityPlus{\@empty}
+\define@key{badge}{BeaversActivityBadgeActivityPlus}{\def\badge@BeaversActivityBadgeActivityPlus{#1}}
+\def\badge@BeaversActivityBadgeAnimalFriend{\@empty}
+\define@key{badge}{BeaversActivityBadgeAnimalFriend}{\def\badge@BeaversActivityBadgeAnimalFriend{#1}}
+\def\badge@BeaversActivityBadgeBookReader{\@empty}
+\define@key{badge}{BeaversActivityBadgeBookReader}{\def\badge@BeaversActivityBadgeBookReader{#1}}
+\def\badge@BeaversActivityBadgeBuilder{\@empty}
+\define@key{badge}{BeaversActivityBadgeBuilder}{\def\badge@BeaversActivityBadgeBuilder{#1}}
+\def\badge@BeaversActivityBadgeCampCraft{\@empty}
+\define@key{badge}{BeaversActivityBadgeCampCraft}{\def\badge@BeaversActivityBadgeCampCraft{#1}}
+\def\badge@BeaversActivityBadgeCollector{\@empty}
+\define@key{badge}{BeaversActivityBadgeCollector}{\def\badge@BeaversActivityBadgeCollector{#1}}
+\def\badge@BeaversActivityBadgeCommunicator{\@empty}
+\define@key{badge}{BeaversActivityBadgeCommunicator}{\def\badge@BeaversActivityBadgeCommunicator{#1}}
+\def\badge@BeaversActivityBadgeCook{\@empty}
+\define@key{badge}{BeaversActivityBadgeCook}{\def\badge@BeaversActivityBadgeCook{#1}}
+\def\badge@BeaversActivityBadgeCreative{\@empty}
+\define@key{badge}{BeaversActivityBadgeCreative}{\def\badge@BeaversActivityBadgeCreative{#1}}
+\def\badge@BeaversActivityBadgeCyclist{\@empty}
+\define@key{badge}{BeaversActivityBadgeCyclist}{\def\badge@BeaversActivityBadgeCyclist{#1}}
+\def\badge@BeaversActivityBadgeDisabilityAwareness{\@empty}
+\define@key{badge}{BeaversActivityBadgeDisabilityAwareness}{\def\badge@BeaversActivityBadgeDisabilityAwareness{#1}}
+\def\badge@BeaversActivityBadgeExperiment{\@empty}
+\define@key{badge}{BeaversActivityBadgeExperiment}{\def\badge@BeaversActivityBadgeExperiment{#1}}
+\def\badge@BeaversActivityBadgeExplore{\@empty}
+\define@key{badge}{BeaversActivityBadgeExplore}{\def\badge@BeaversActivityBadgeExplore{#1}}
+\def\badge@BeaversActivityBadgeFaith{\@empty}
+\define@key{badge}{BeaversActivityBadgeFaith}{\def\badge@BeaversActivityBadgeFaith{#1}}
+\def\badge@BeaversActivityBadgeGardener{\@empty}
+\define@key{badge}{BeaversActivityBadgeGardener}{\def\badge@BeaversActivityBadgeGardener{#1}}
+\def\badge@BeaversActivityBadgeGlobalIssues{\@empty}
+\define@key{badge}{BeaversActivityBadgeGlobalIssues}{\def\badge@BeaversActivityBadgeGlobalIssues{#1}}
+\def\badge@BeaversActivityBadgeHealthandFitness{\@empty}
+\define@key{badge}{BeaversActivityBadgeHealthandFitness}{\def\badge@BeaversActivityBadgeHealthandFitness{#1}}
+\def\badge@BeaversActivityBadgeHobbies{\@empty}
+\define@key{badge}{BeaversActivityBadgeHobbies}{\def\badge@BeaversActivityBadgeHobbies{#1}}
+\def\badge@BeaversActivityBadgeInternational{\@empty}
+\define@key{badge}{BeaversActivityBadgeInternational}{\def\badge@BeaversActivityBadgeInternational{#1}}
+\def\badge@BeaversActivityBadgeMoneySkills{\@empty}
+\define@key{badge}{BeaversActivityBadgeMoneySkills}{\def\badge@BeaversActivityBadgeMoneySkills{#1}}
+\def\badge@BeaversActivityBadgePhotographer{\@empty}
+\define@key{badge}{BeaversActivityBadgePhotographer}{\def\badge@BeaversActivityBadgePhotographer{#1}}
+\def\badge@BeaversActivityBadgeSafety{\@empty}
+\define@key{badge}{BeaversActivityBadgeSafety}{\def\badge@BeaversActivityBadgeSafety{#1}}
+\def\badge@BeaversActivityBadgeSpace{\@empty}
+\define@key{badge}{BeaversActivityBadgeSpace}{\def\badge@BeaversActivityBadgeSpace{#1}}
+\def\badge@BeaversActivityBadgeSports{\@empty}
+\define@key{badge}{BeaversActivityBadgeSports}{\def\badge@BeaversActivityBadgeSports{#1}}
+\def\badge@BeaversChallengeAwardMyAdventure{\@empty}
+\define@key{badge}{BeaversChallengeAwardMyAdventure}{\def\badge@BeaversChallengeAwardMyAdventure{#1}}
+\def\badge@BeaversChallengeAwardMyOutdoors{\@empty}
+\define@key{badge}{BeaversChallengeAwardMyOutdoors}{\def\badge@BeaversChallengeAwardMyOutdoors{#1}}
+\def\badge@BeaversChallengeAwardMySkills{\@empty}
+\define@key{badge}{BeaversChallengeAwardMySkills}{\def\badge@BeaversChallengeAwardMySkills{#1}}
+\def\badge@BeaversChallengeAwardMyWorld{\@empty}
+\define@key{badge}{BeaversChallengeAwardMyWorld}{\def\badge@BeaversChallengeAwardMyWorld{#1}}
+\def\badge@BeaversChallengeAwardPersonal{\@empty}
+\define@key{badge}{BeaversChallengeAwardPersonal}{\def\badge@BeaversChallengeAwardPersonal{#1}}
+\def\badge@BeaversChallengeAwardTeamwork{\@empty}
+\define@key{badge}{BeaversChallengeAwardTeamwork}{\def\badge@BeaversChallengeAwardTeamwork{#1}}
+\def\badge@BeaversChiefScoutsBronzeAward{\@empty}
+\define@key{badge}{BeaversChiefScoutsBronzeAward}{\def\badge@BeaversChiefScoutsBronzeAward{#1}}
+\def\badge@BeaversYouShapeAwardCentral{\@empty}
+\define@key{badge}{BeaversYouShapeAwardCentral}{\def\badge@BeaversYouShapeAwardCentral{#1}}
+\def\badge@BeaversYouShapeAwardLead{\@empty}
+\define@key{badge}{BeaversYouShapeAwardLead}{\def\badge@BeaversYouShapeAwardLead{#1}}
+\def\badge@BeaversYouShapeAwardPlan{\@empty}
+\define@key{badge}{BeaversYouShapeAwardPlan}{\def\badge@BeaversYouShapeAwardPlan{#1}}
+\def\badge@BeaversYouShapeAwardRepresent{\@empty}
+\define@key{badge}{BeaversYouShapeAwardRepresent}{\def\badge@BeaversYouShapeAwardRepresent{#1}}
+\def\badge@CubsActivityBadgeActivityPlus{\@empty}
+\define@key{badge}{CubsActivityBadgeActivityPlus}{\def\badge@CubsActivityBadgeActivityPlus{#1}}
+\def\badge@CubsActivityBadgeAnimalCarer{\@empty}
+\define@key{badge}{CubsActivityBadgeAnimalCarer}{\def\badge@CubsActivityBadgeAnimalCarer{#1}}
+\def\badge@CubsActivityBadgeArtist{\@empty}
+\define@key{badge}{CubsActivityBadgeArtist}{\def\badge@CubsActivityBadgeArtist{#1}}
+\def\badge@CubsActivityBadgeAstronomer{\@empty}
+\define@key{badge}{CubsActivityBadgeAstronomer}{\def\badge@CubsActivityBadgeAstronomer{#1}}
+\def\badge@CubsActivityBadgeAthleticsPlus{\@empty}
+\define@key{badge}{CubsActivityBadgeAthleticsPlus}{\def\badge@CubsActivityBadgeAthleticsPlus{#1}}
+\def\badge@CubsActivityBadgeAthletics{\@empty}
+\define@key{badge}{CubsActivityBadgeAthletics}{\def\badge@CubsActivityBadgeAthletics{#1}}
+\def\badge@CubsActivityBadgeBackwoodsCooking{\@empty}
+\define@key{badge}{CubsActivityBadgeBackwoodsCooking}{\def\badge@CubsActivityBadgeBackwoodsCooking{#1}}
+\def\badge@CubsActivityBadgeBookReader{\@empty}
+\define@key{badge}{CubsActivityBadgeBookReader}{\def\badge@CubsActivityBadgeBookReader{#1}}
+\def\badge@CubsActivityBadgeChef{\@empty}
+\define@key{badge}{CubsActivityBadgeChef}{\def\badge@CubsActivityBadgeChef{#1}}
+\def\badge@CubsActivityBadgeCollector{\@empty}
+\define@key{badge}{CubsActivityBadgeCollector}{\def\badge@CubsActivityBadgeCollector{#1}}
+\def\badge@CubsActivityBadgeCommunicator{\@empty}
+\define@key{badge}{CubsActivityBadgeCommunicator}{\def\badge@CubsActivityBadgeCommunicator{#1}}
+\def\badge@CubsActivityBadgeCyclist{\@empty}
+\define@key{badge}{CubsActivityBadgeCyclist}{\def\badge@CubsActivityBadgeCyclist{#1}}
+\def\badge@CubsActivityBadgeDisabilityAwareness{\@empty}
+\define@key{badge}{CubsActivityBadgeDisabilityAwareness}{\def\badge@CubsActivityBadgeDisabilityAwareness{#1}}
+\def\badge@CubsActivityBadgeDIY{\@empty}
+\define@key{badge}{CubsActivityBadgeDIY}{\def\badge@CubsActivityBadgeDIY{#1}}
+\def\badge@CubsActivityBadgeEntertainer{\@empty}
+\define@key{badge}{CubsActivityBadgeEntertainer}{\def\badge@CubsActivityBadgeEntertainer{#1}}
+\def\badge@CubsActivityBadgeEnvironmentalConservation{\@empty}
+\define@key{badge}{CubsActivityBadgeEnvironmentalConservation}{\def\badge@CubsActivityBadgeEnvironmentalConservation{#1}}
+\def\badge@CubsActivityBadgeEquestrian{\@empty}
+\define@key{badge}{CubsActivityBadgeEquestrian}{\def\badge@CubsActivityBadgeEquestrian{#1}}
+\def\badge@CubsActivityBadgeFireSafety{\@empty}
+\define@key{badge}{CubsActivityBadgeFireSafety}{\def\badge@CubsActivityBadgeFireSafety{#1}}
+\def\badge@CubsActivityBadgeGardener{\@empty}
+\define@key{badge}{CubsActivityBadgeGardener}{\def\badge@CubsActivityBadgeGardener{#1}}
+\def\badge@CubsActivityBadgeGlobalIssues{\@empty}
+\define@key{badge}{CubsActivityBadgeGlobalIssues}{\def\badge@CubsActivityBadgeGlobalIssues{#1}}
+\def\badge@CubsActivityBadgeHobbies{\@empty}
+\define@key{badge}{CubsActivityBadgeHobbies}{\def\badge@CubsActivityBadgeHobbies{#1}}
+\def\badge@CubsActivityBadgeHomeHelp{\@empty}
+\define@key{badge}{CubsActivityBadgeHomeHelp}{\def\badge@CubsActivityBadgeHomeHelp{#1}}
+\def\badge@CubsActivityBadgeHomeSafety{\@empty}
+\define@key{badge}{CubsActivityBadgeHomeSafety}{\def\badge@CubsActivityBadgeHomeSafety{#1}}
+\def\badge@CubsActivityBadgeInternational{\@empty}
+\define@key{badge}{CubsActivityBadgeInternational}{\def\badge@CubsActivityBadgeInternational{#1}}
+\def\badge@CubsActivityBadgeLocalKnowledge{\@empty}
+\define@key{badge}{CubsActivityBadgeLocalKnowledge}{\def\badge@CubsActivityBadgeLocalKnowledge{#1}}
+\def\badge@CubsActivityBadgeMartialArts{\@empty}
+\define@key{badge}{CubsActivityBadgeMartialArts}{\def\badge@CubsActivityBadgeMartialArts{#1}}
+\def\badge@CubsActivityBadgeMoneySkills{\@empty}
+\define@key{badge}{CubsActivityBadgeMoneySkills}{\def\badge@CubsActivityBadgeMoneySkills{#1}}
+\def\badge@CubsActivityBadgeMyFaith{\@empty}
+\define@key{badge}{CubsActivityBadgeMyFaith}{\def\badge@CubsActivityBadgeMyFaith{#1}}
+\def\badge@CubsActivityBadgeNaturalist{\@empty}
+\define@key{badge}{CubsActivityBadgeNaturalist}{\def\badge@CubsActivityBadgeNaturalist{#1}}
+\def\badge@CubsActivityBadgePersonalSafety{\@empty}
+\define@key{badge}{CubsActivityBadgePersonalSafety}{\def\badge@CubsActivityBadgePersonalSafety{#1}}
+\def\badge@CubsActivityBadgePhotographer{\@empty}
+\define@key{badge}{CubsActivityBadgePhotographer}{\def\badge@CubsActivityBadgePhotographer{#1}}
+\def\badge@CubsActivityBadgePhysicalRecreation{\@empty}
+\define@key{badge}{CubsActivityBadgePhysicalRecreation}{\def\badge@CubsActivityBadgePhysicalRecreation{#1}}
+\def\badge@CubsActivityBadgePioneer{\@empty}
+\define@key{badge}{CubsActivityBadgePioneer}{\def\badge@CubsActivityBadgePioneer{#1}}
+\def\badge@CubsActivityBadgeRoadSafety{\@empty}
+\define@key{badge}{CubsActivityBadgeRoadSafety}{\def\badge@CubsActivityBadgeRoadSafety{#1}}
+\def\badge@CubsActivityBadgeScientist{\@empty}
+\define@key{badge}{CubsActivityBadgeScientist}{\def\badge@CubsActivityBadgeScientist{#1}}
+\def\badge@CubsActivityBadgeSkater{\@empty}
+\define@key{badge}{CubsActivityBadgeSkater}{\def\badge@CubsActivityBadgeSkater{#1}}
+\def\badge@CubsActivityBadgeSportsEnthusiast{\@empty}
+\define@key{badge}{CubsActivityBadgeSportsEnthusiast}{\def\badge@CubsActivityBadgeSportsEnthusiast{#1}}
+\def\badge@CubsActivityBadgeWaterActivities{\@empty}
+\define@key{badge}{CubsActivityBadgeWaterActivities}{\def\badge@CubsActivityBadgeWaterActivities{#1}}
+\def\badge@CubsActivityBadgeWorldFaiths{\@empty}
+\define@key{badge}{CubsActivityBadgeWorldFaiths}{\def\badge@CubsActivityBadgeWorldFaiths{#1}}
+\def\badge@CubsChallengeAwardOurAdventure{\@empty}
+\define@key{badge}{CubsChallengeAwardOurAdventure}{\def\badge@CubsChallengeAwardOurAdventure{#1}}
+\def\badge@CubsChallengeAwardOurOutdoors{\@empty}
+\define@key{badge}{CubsChallengeAwardOurOutdoors}{\def\badge@CubsChallengeAwardOurOutdoors{#1}}
+\def\badge@CubsChallengeAwardOurSkills{\@empty}
+\define@key{badge}{CubsChallengeAwardOurSkills}{\def\badge@CubsChallengeAwardOurSkills{#1}}
+\def\badge@CubsChallengeAwardOurWorld{\@empty}
+\define@key{badge}{CubsChallengeAwardOurWorld}{\def\badge@CubsChallengeAwardOurWorld{#1}}
+\def\badge@CubsChallengeAwardPersonal{\@empty}
+\define@key{badge}{CubsChallengeAwardPersonal}{\def\badge@CubsChallengeAwardPersonal{#1}}
+\def\badge@CubsChallengeAwardTeamLeader{\@empty}
+\define@key{badge}{CubsChallengeAwardTeamLeader}{\def\badge@CubsChallengeAwardTeamLeader{#1}}
+\def\badge@CubsChallengeAwardTeamwork{\@empty}
+\define@key{badge}{CubsChallengeAwardTeamwork}{\def\badge@CubsChallengeAwardTeamwork{#1}}
+\def\badge@CubsChiefScoutsSilverAward{\@empty}
+\define@key{badge}{CubsChiefScoutsSilverAward}{\def\badge@CubsChiefScoutsSilverAward{#1}}
+\def\badge@CubsYouShapeAwardCentral{\@empty}
+\define@key{badge}{CubsYouShapeAwardCentral}{\def\badge@CubsYouShapeAwardCentral{#1}}
+\def\badge@CubsYouShapeAwardLead{\@empty}
+\define@key{badge}{CubsYouShapeAwardLead}{\def\badge@CubsYouShapeAwardLead{#1}}
+\def\badge@CubsYouShapeAwardPlan{\@empty}
+\define@key{badge}{CubsYouShapeAwardPlan}{\def\badge@CubsYouShapeAwardPlan{#1}}
+\def\badge@CubsYouShapeAwardRepresent{\@empty}
+\define@key{badge}{CubsYouShapeAwardRepresent}{\def\badge@CubsYouShapeAwardRepresent{#1}}
+\def\badge@ScoutsActivityBadgeActivityPlus{\@empty}
+\define@key{badge}{ScoutsActivityBadgeActivityPlus}{\def\badge@ScoutsActivityBadgeActivityPlus{#1}}
+\def\badge@ScoutsActivityBadgeActivityCentreService{\@empty}
+\define@key{badge}{ScoutsActivityBadgeActivityCentreService}{\def\badge@ScoutsActivityBadgeActivityCentreService{#1}}
+\def\badge@ScoutsActivityBadgeAirorSeaNavigation{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAirorSeaNavigation}{\def\badge@ScoutsActivityBadgeAirorSeaNavigation{#1}}
+\def\badge@ScoutsActivityBadgeAirResearch{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAirResearch}{\def\badge@ScoutsActivityBadgeAirResearch{#1}}
+\def\badge@ScoutsActivityBadgeAirSpotter{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAirSpotter}{\def\badge@ScoutsActivityBadgeAirSpotter{#1}}
+\def\badge@ScoutsActivityBadgeAngler{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAngler}{\def\badge@ScoutsActivityBadgeAngler{#1}}
+\def\badge@ScoutsActivityBadgeArtist{\@empty}
+\define@key{badge}{ScoutsActivityBadgeArtist}{\def\badge@ScoutsActivityBadgeArtist{#1}}
+\def\badge@ScoutsActivityBadgeAstronautics{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAstronautics}{\def\badge@ScoutsActivityBadgeAstronautics{#1}}
+\def\badge@ScoutsActivityBadgeAstronomer{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAstronomer}{\def\badge@ScoutsActivityBadgeAstronomer{#1}}
+\def\badge@ScoutsActivityBadgeAthleticsPlus{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAthleticsPlus}{\def\badge@ScoutsActivityBadgeAthleticsPlus{#1}}
+\def\badge@ScoutsActivityBadgeAthletics{\@empty}
+\define@key{badge}{ScoutsActivityBadgeAthletics}{\def\badge@ScoutsActivityBadgeAthletics{#1}}
+\def\badge@ScoutsActivityBadgeCamper{\@empty}
+\define@key{badge}{ScoutsActivityBadgeCamper}{\def\badge@ScoutsActivityBadgeCamper{#1}}
+\def\badge@ScoutsActivityBadgeCaver{\@empty}
+\define@key{badge}{ScoutsActivityBadgeCaver}{\def\badge@ScoutsActivityBadgeCaver{#1}}
+\def\badge@ScoutsActivityBadgeChef{\@empty}
+\define@key{badge}{ScoutsActivityBadgeChef}{\def\badge@ScoutsActivityBadgeChef{#1}}
+\def\badge@ScoutsActivityBadgeCircusSkills{\@empty}
+\define@key{badge}{ScoutsActivityBadgeCircusSkills}{\def\badge@ScoutsActivityBadgeCircusSkills{#1}}
+\def\badge@ScoutsActivityBadgeClimber{\@empty}
+\define@key{badge}{ScoutsActivityBadgeClimber}{\def\badge@ScoutsActivityBadgeClimber{#1}}
+\def\badge@ScoutsActivityBadgeCommunicator{\@empty}
+\define@key{badge}{ScoutsActivityBadgeCommunicator}{\def\badge@ScoutsActivityBadgeCommunicator{#1}}
+\def\badge@ScoutsActivityBadgeCraft{\@empty}
+\define@key{badge}{ScoutsActivityBadgeCraft}{\def\badge@ScoutsActivityBadgeCraft{#1}}
+\def\badge@ScoutsActivityBadgeCyclist{\@empty}
+\define@key{badge}{ScoutsActivityBadgeCyclist}{\def\badge@ScoutsActivityBadgeCyclist{#1}}
+\def\badge@ScoutsActivityBadgeDIY{\@empty}
+\define@key{badge}{ScoutsActivityBadgeDIY}{\def\badge@ScoutsActivityBadgeDIY{#1}}
+\def\badge@ScoutsActivityBadgeDragonBoating{\@empty}
+\define@key{badge}{ScoutsActivityBadgeDragonBoating}{\def\badge@ScoutsActivityBadgeDragonBoating{#1}}
+\def\badge@ScoutsActivityBadgeElectronics{\@empty}
+\define@key{badge}{ScoutsActivityBadgeElectronics}{\def\badge@ScoutsActivityBadgeElectronics{#1}}
+\def\badge@ScoutsActivityBadgeEntertainer{\@empty}
+\define@key{badge}{ScoutsActivityBadgeEntertainer}{\def\badge@ScoutsActivityBadgeEntertainer{#1}}
+\def\badge@ScoutsActivityBadgeEnvironmentalConservation{\@empty}
+\define@key{badge}{ScoutsActivityBadgeEnvironmentalConservation}{\def\badge@ScoutsActivityBadgeEnvironmentalConservation{#1}}
+\def\badge@ScoutsActivityBadgeEquestrian{\@empty}
+\define@key{badge}{ScoutsActivityBadgeEquestrian}{\def\badge@ScoutsActivityBadgeEquestrian{#1}}
+\def\badge@ScoutsActivityBadgeFarming{\@empty}
+\define@key{badge}{ScoutsActivityBadgeFarming}{\def\badge@ScoutsActivityBadgeFarming{#1}}
+\def\badge@ScoutsActivityBadgeFireSafety{\@empty}
+\define@key{badge}{ScoutsActivityBadgeFireSafety}{\def\badge@ScoutsActivityBadgeFireSafety{#1}}
+\def\badge@ScoutsActivityBadgeForester{\@empty}
+\define@key{badge}{ScoutsActivityBadgeForester}{\def\badge@ScoutsActivityBadgeForester{#1}}
+\def\badge@ScoutsActivityBadgeFundraising{\@empty}
+\define@key{badge}{ScoutsActivityBadgeFundraising}{\def\badge@ScoutsActivityBadgeFundraising{#1}}
+\def\badge@ScoutsActivityBadgeGeocaching{\@empty}
+\define@key{badge}{ScoutsActivityBadgeGeocaching}{\def\badge@ScoutsActivityBadgeGeocaching{#1}}
+\def\badge@ScoutsActivityBadgeGlobalIssues{\@empty}
+\define@key{badge}{ScoutsActivityBadgeGlobalIssues}{\def\badge@ScoutsActivityBadgeGlobalIssues{#1}}
+\def\badge@ScoutsActivityBadgeHillWalker{\@empty}
+\define@key{badge}{ScoutsActivityBadgeHillWalker}{\def\badge@ScoutsActivityBadgeHillWalker{#1}}
+\def\badge@ScoutsActivityBadgeHobbies{\@empty}
+\define@key{badge}{ScoutsActivityBadgeHobbies}{\def\badge@ScoutsActivityBadgeHobbies{#1}}
+\def\badge@ScoutsActivityBadgeInstructor{\@empty}
+\define@key{badge}{ScoutsActivityBadgeInstructor}{\def\badge@ScoutsActivityBadgeInstructor{#1}}
+\def\badge@ScoutsActivityBadgeInternational{\@empty}
+\define@key{badge}{ScoutsActivityBadgeInternational}{\def\badge@ScoutsActivityBadgeInternational{#1}}
+\def\badge@ScoutsActivityBadgeLibrarian{\@empty}
+\define@key{badge}{ScoutsActivityBadgeLibrarian}{\def\badge@ScoutsActivityBadgeLibrarian{#1}}
+\def\badge@ScoutsActivityBadgeLifesaver{\@empty}
+\define@key{badge}{ScoutsActivityBadgeLifesaver}{\def\badge@ScoutsActivityBadgeLifesaver{#1}}
+\def\badge@ScoutsActivityBadgeLocalKnowledge{\@empty}
+\define@key{badge}{ScoutsActivityBadgeLocalKnowledge}{\def\badge@ScoutsActivityBadgeLocalKnowledge{#1}}
+\def\badge@ScoutsActivityBadgeMartialArts{\@empty}
+\define@key{badge}{ScoutsActivityBadgeMartialArts}{\def\badge@ScoutsActivityBadgeMartialArts{#1}}
+\def\badge@ScoutsActivityBadgeMasteratArms{\@empty}
+\define@key{badge}{ScoutsActivityBadgeMasteratArms}{\def\badge@ScoutsActivityBadgeMasteratArms{#1}}
+\def\badge@ScoutsActivityBadgeMechanic{\@empty}
+\define@key{badge}{ScoutsActivityBadgeMechanic}{\def\badge@ScoutsActivityBadgeMechanic{#1}}
+\def\badge@ScoutsActivityBadgeMediaRelationsandMarketing{\@empty}
+\define@key{badge}{ScoutsActivityBadgeMediaRelationsandMarketing}{\def\badge@ScoutsActivityBadgeMediaRelationsandMarketing{#1}}
+\def\badge@ScoutsActivityBadgeMeteorologist{\@empty}
+\define@key{badge}{ScoutsActivityBadgeMeteorologist}{\def\badge@ScoutsActivityBadgeMeteorologist{#1}}
+\def\badge@ScoutsActivityBadgeModelMaker{\@empty}
+\define@key{badge}{ScoutsActivityBadgeModelMaker}{\def\badge@ScoutsActivityBadgeModelMaker{#1}}
+\def\badge@ScoutsActivityBadgeMyFaith{\@empty}
+\define@key{badge}{ScoutsActivityBadgeMyFaith}{\def\badge@ScoutsActivityBadgeMyFaith{#1}}
+\def\badge@ScoutsActivityBadgeNaturalist{\@empty}
+\define@key{badge}{ScoutsActivityBadgeNaturalist}{\def\badge@ScoutsActivityBadgeNaturalist{#1}}
+\def\badge@ScoutsActivityBadgeOrienteer{\@empty}
+\define@key{badge}{ScoutsActivityBadgeOrienteer}{\def\badge@ScoutsActivityBadgeOrienteer{#1}}
+\def\badge@ScoutsActivityBadgeParascending{\@empty}
+\define@key{badge}{ScoutsActivityBadgeParascending}{\def\badge@ScoutsActivityBadgeParascending{#1}}
+\def\badge@ScoutsActivityBadgePhotographer{\@empty}
+\define@key{badge}{ScoutsActivityBadgePhotographer}{\def\badge@ScoutsActivityBadgePhotographer{#1}}
+\def\badge@ScoutsActivityBadgePhysicalRecreation{\@empty}
+\define@key{badge}{ScoutsActivityBadgePhysicalRecreation}{\def\badge@ScoutsActivityBadgePhysicalRecreation{#1}}
+\def\badge@ScoutsActivityBadgePioneer{\@empty}
+\define@key{badge}{ScoutsActivityBadgePioneer}{\def\badge@ScoutsActivityBadgePioneer{#1}}
+\def\badge@ScoutsActivityBadgePowerCoxswain{\@empty}
+\define@key{badge}{ScoutsActivityBadgePowerCoxswain}{\def\badge@ScoutsActivityBadgePowerCoxswain{#1}}
+\def\badge@ScoutsActivityBadgePullingFixedSeatRowing{\@empty}
+\define@key{badge}{ScoutsActivityBadgePullingFixedSeatRowing}{\def\badge@ScoutsActivityBadgePullingFixedSeatRowing{#1}}
+\def\badge@ScoutsActivityBadgeQuartermaster{\@empty}
+\define@key{badge}{ScoutsActivityBadgeQuartermaster}{\def\badge@ScoutsActivityBadgeQuartermaster{#1}}
+\def\badge@ScoutsActivityBadgeScientist{\@empty}
+\define@key{badge}{ScoutsActivityBadgeScientist}{\def\badge@ScoutsActivityBadgeScientist{#1}}
+\def\badge@ScoutsActivityBadgeSportsEnthusiast{\@empty}
+\define@key{badge}{ScoutsActivityBadgeSportsEnthusiast}{\def\badge@ScoutsActivityBadgeSportsEnthusiast{#1}}
+\def\badge@ScoutsActivityBadgeStreetSports{\@empty}
+\define@key{badge}{ScoutsActivityBadgeStreetSports}{\def\badge@ScoutsActivityBadgeStreetSports{#1}}
+\def\badge@ScoutsActivityBadgeSurvivalSkills{\@empty}
+\define@key{badge}{ScoutsActivityBadgeSurvivalSkills}{\def\badge@ScoutsActivityBadgeSurvivalSkills{#1}}
+\def\badge@ScoutsActivityBadgeWaterActivities{\@empty}
+\define@key{badge}{ScoutsActivityBadgeWaterActivities}{\def\badge@ScoutsActivityBadgeWaterActivities{#1}}
+\def\badge@ScoutsActivityBadgeWorldFaiths{\@empty}
+\define@key{badge}{ScoutsActivityBadgeWorldFaiths}{\def\badge@ScoutsActivityBadgeWorldFaiths{#1}}
+\def\badge@ScoutsActivityBadgeWriter{\@empty}
+\define@key{badge}{ScoutsActivityBadgeWriter}{\def\badge@ScoutsActivityBadgeWriter{#1}}
+\def\badge@ScoutsChallengeAwardAdventure{\@empty}
+\define@key{badge}{ScoutsChallengeAwardAdventure}{\def\badge@ScoutsChallengeAwardAdventure{#1}}
+\def\badge@ScoutsChallengeAwardCreative{\@empty}
+\define@key{badge}{ScoutsChallengeAwardCreative}{\def\badge@ScoutsChallengeAwardCreative{#1}}
+\def\badge@ScoutsChallengeAwardExpedition{\@empty}
+\define@key{badge}{ScoutsChallengeAwardExpedition}{\def\badge@ScoutsChallengeAwardExpedition{#1}}
+\def\badge@ScoutsChallengeAwardOutdoors{\@empty}
+\define@key{badge}{ScoutsChallengeAwardOutdoors}{\def\badge@ScoutsChallengeAwardOutdoors{#1}}
+\def\badge@ScoutsChallengeAwardPersonal{\@empty}
+\define@key{badge}{ScoutsChallengeAwardPersonal}{\def\badge@ScoutsChallengeAwardPersonal{#1}}
+\def\badge@ScoutsChallengeAwardSkills{\@empty}
+\define@key{badge}{ScoutsChallengeAwardSkills}{\def\badge@ScoutsChallengeAwardSkills{#1}}
+\def\badge@ScoutsChallengeAwardTeamLeader{\@empty}
+\define@key{badge}{ScoutsChallengeAwardTeamLeader}{\def\badge@ScoutsChallengeAwardTeamLeader{#1}}
+\def\badge@ScoutsChallengeAwardTeamwork{\@empty}
+\define@key{badge}{ScoutsChallengeAwardTeamwork}{\def\badge@ScoutsChallengeAwardTeamwork{#1}}
+\def\badge@ScoutsChallengeAwardWorld{\@empty}
+\define@key{badge}{ScoutsChallengeAwardWorld}{\def\badge@ScoutsChallengeAwardWorld{#1}}
+\def\badge@ScoutsChiefScoutsGoldAward{\@empty}
+\define@key{badge}{ScoutsChiefScoutsGoldAward}{\def\badge@ScoutsChiefScoutsGoldAward{#1}}
+\def\badge@ScoutsYouShapeAwardCentral{\@empty}
+\define@key{badge}{ScoutsYouShapeAwardCentral}{\def\badge@ScoutsYouShapeAwardCentral{#1}}
+\def\badge@ScoutsYouShapeAwardLead{\@empty}
+\define@key{badge}{ScoutsYouShapeAwardLead}{\def\badge@ScoutsYouShapeAwardLead{#1}}
+\def\badge@ScoutsYouShapeAwardPlan{\@empty}
+\define@key{badge}{ScoutsYouShapeAwardPlan}{\def\badge@ScoutsYouShapeAwardPlan{#1}}
+\def\badge@ScoutsYouShapeAwardRepresent{\@empty}
+\define@key{badge}{ScoutsYouShapeAwardRepresent}{\def\badge@ScoutsYouShapeAwardRepresent{#1}}
+\def\badge@ExplorersActivityBadgeMediaRelations{\@empty}
+\define@key{badge}{ExplorersActivityBadgeMediaRelations}{\def\badge@ExplorersActivityBadgeMediaRelations{#1}}
+\def\badge@AllSectionsStagedActivityBadgeAirActivities{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeAirActivities}{\def\badge@AllSectionsStagedActivityBadgeAirActivities{#1}}
+\def\badge@AllSectionsStagedActivityBadgeCommunityImpact{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeCommunityImpact}{\def\badge@AllSectionsStagedActivityBadgeCommunityImpact{#1}}
+\def\badge@AllSectionsStagedActivityBadgeDigitalCitizen{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeDigitalCitizen}{\def\badge@AllSectionsStagedActivityBadgeDigitalCitizen{#1}}
+\def\badge@AllSectionsStagedActivityBadgeDigitalMaker{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeDigitalMaker}{\def\badge@AllSectionsStagedActivityBadgeDigitalMaker{#1}}
+\def\badge@AllSectionsStagedActivityBadgeEmergencyAid{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeEmergencyAid}{\def\badge@AllSectionsStagedActivityBadgeEmergencyAid{#1}}
+\def\badge@AllSectionsStagedActivityBadgeHikesAway{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeHikesAway}{\def\badge@AllSectionsStagedActivityBadgeHikesAway{#1}}
+\def\badge@AllSectionsStagedActivityBadgeMusician{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeMusician}{\def\badge@AllSectionsStagedActivityBadgeMusician{#1}}
+\def\badge@AllSectionsStagedActivityBadgeNauticalSkills{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeNauticalSkills}{\def\badge@AllSectionsStagedActivityBadgeNauticalSkills{#1}}
+\def\badge@AllSectionsStagedActivityBadgeNavigator{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeNavigator}{\def\badge@AllSectionsStagedActivityBadgeNavigator{#1}}
+\def\badge@AllSectionsStagedActivityBadgeNightsAway{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeNightsAway}{\def\badge@AllSectionsStagedActivityBadgeNightsAway{#1}}
+\def\badge@AllSectionsStagedActivityBadgePaddleSports{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgePaddleSports}{\def\badge@AllSectionsStagedActivityBadgePaddleSports{#1}}
+\def\badge@AllSectionsStagedActivityBadgeSailing{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeSailing}{\def\badge@AllSectionsStagedActivityBadgeSailing{#1}}
+\def\badge@AllSectionsStagedActivityBadgeSnowsports{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeSnowsports}{\def\badge@AllSectionsStagedActivityBadgeSnowsports{#1}}
+\def\badge@AllSectionsStagedActivityBadgeSwimming{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeSwimming}{\def\badge@AllSectionsStagedActivityBadgeSwimming{#1}}
+\def\badge@AllSectionsStagedActivityBadgeTheGreatIndoors{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeTheGreatIndoors}{\def\badge@AllSectionsStagedActivityBadgeTheGreatIndoors{#1}}
+\def\badge@AllSectionsStagedActivityBadgeTimeontheWater{\@empty}
+\define@key{badge}{AllSectionsStagedActivityBadgeTimeontheWater}{\def\badge@AllSectionsStagedActivityBadgeTimeontheWater{#1}}
+\newcommand{\badgesidebyside}[1][]{
+% set all ifbadges to false for default
+%  \setkeys{badge}{textsize=\normalsize}
+%  \setlength{\badgewidth}{30mm} %default badge size
+%  \newlength{\badgeinfowidth}
+  \setkeys{badge}{SquirrelsActivityBadgeStoryTime=}
+  \setkeys{badge}{BeaversActivityBadgeActivityPlus=}
+  \setkeys{badge}{BeaversActivityBadgeAnimalFriend=}
+  \setkeys{badge}{BeaversActivityBadgeBookReader=}
+  \setkeys{badge}{BeaversActivityBadgeBuilder=}
+  \setkeys{badge}{BeaversActivityBadgeCampCraft=}
+  \setkeys{badge}{BeaversActivityBadgeCollector=}
+  \setkeys{badge}{BeaversActivityBadgeCommunicator=}
+  \setkeys{badge}{BeaversActivityBadgeCook=}
+  \setkeys{badge}{BeaversActivityBadgeCreative=}
+  \setkeys{badge}{BeaversActivityBadgeCyclist=}
+  \setkeys{badge}{BeaversActivityBadgeDisabilityAwareness=}
+  \setkeys{badge}{BeaversActivityBadgeExperiment=}
+  \setkeys{badge}{BeaversActivityBadgeExplore=}
+  \setkeys{badge}{BeaversActivityBadgeFaith=}
+  \setkeys{badge}{BeaversActivityBadgeGardener=}
+  \setkeys{badge}{BeaversActivityBadgeGlobalIssues=}
+  \setkeys{badge}{BeaversActivityBadgeHealthandFitness=}
+  \setkeys{badge}{BeaversActivityBadgeHobbies=}
+  \setkeys{badge}{BeaversActivityBadgeInternational=}
+  \setkeys{badge}{BeaversActivityBadgeMoneySkills=}
+  \setkeys{badge}{BeaversActivityBadgePhotographer=}
+  \setkeys{badge}{BeaversActivityBadgeSafety=}
+  \setkeys{badge}{BeaversActivityBadgeSpace=}
+  \setkeys{badge}{BeaversActivityBadgeSports=}
+  \setkeys{badge}{BeaversChallengeAwardMyAdventure=}
+  \setkeys{badge}{BeaversChallengeAwardMyOutdoors=}
+  \setkeys{badge}{BeaversChallengeAwardMySkills=}
+  \setkeys{badge}{BeaversChallengeAwardMyWorld=}
+  \setkeys{badge}{BeaversChallengeAwardPersonal=}
+  \setkeys{badge}{BeaversChallengeAwardTeamwork=}
+  \setkeys{badge}{BeaversChiefScoutsBronzeAward=}
+  \setkeys{badge}{BeaversYouShapeAwardCentral=}
+  \setkeys{badge}{BeaversYouShapeAwardLead=}
+  \setkeys{badge}{BeaversYouShapeAwardPlan=}
+  \setkeys{badge}{BeaversYouShapeAwardRepresent=}
+  \setkeys{badge}{CubsActivityBadgeActivityPlus=}
+  \setkeys{badge}{CubsActivityBadgeAnimalCarer=}
+  \setkeys{badge}{CubsActivityBadgeArtist=}
+  \setkeys{badge}{CubsActivityBadgeAstronomer=}
+  \setkeys{badge}{CubsActivityBadgeAthleticsPlus=}
+  \setkeys{badge}{CubsActivityBadgeAthletics=}
+  \setkeys{badge}{CubsActivityBadgeBackwoodsCooking=}
+  \setkeys{badge}{CubsActivityBadgeBookReader=}
+  \setkeys{badge}{CubsActivityBadgeChef=}
+  \setkeys{badge}{CubsActivityBadgeCollector=}
+  \setkeys{badge}{CubsActivityBadgeCommunicator=}
+  \setkeys{badge}{CubsActivityBadgeCyclist=}
+  \setkeys{badge}{CubsActivityBadgeDisabilityAwareness=}
+  \setkeys{badge}{CubsActivityBadgeDIY=}
+  \setkeys{badge}{CubsActivityBadgeEntertainer=}
+  \setkeys{badge}{CubsActivityBadgeEnvironmentalConservation=}
+  \setkeys{badge}{CubsActivityBadgeEquestrian=}
+  \setkeys{badge}{CubsActivityBadgeFireSafety=}
+  \setkeys{badge}{CubsActivityBadgeGardener=}
+  \setkeys{badge}{CubsActivityBadgeGlobalIssues=}
+  \setkeys{badge}{CubsActivityBadgeHobbies=}
+  \setkeys{badge}{CubsActivityBadgeHomeHelp=}
+  \setkeys{badge}{CubsActivityBadgeHomeSafety=}
+  \setkeys{badge}{CubsActivityBadgeInternational=}
+  \setkeys{badge}{CubsActivityBadgeLocalKnowledge=}
+  \setkeys{badge}{CubsActivityBadgeMartialArts=}
+  \setkeys{badge}{CubsActivityBadgeMoneySkills=}
+  \setkeys{badge}{CubsActivityBadgeMyFaith=}
+  \setkeys{badge}{CubsActivityBadgeNaturalist=}
+  \setkeys{badge}{CubsActivityBadgePersonalSafety=}
+  \setkeys{badge}{CubsActivityBadgePhotographer=}
+  \setkeys{badge}{CubsActivityBadgePhysicalRecreation=}
+  \setkeys{badge}{CubsActivityBadgePioneer=}
+  \setkeys{badge}{CubsActivityBadgeRoadSafety=}
+  \setkeys{badge}{CubsActivityBadgeScientist=}
+  \setkeys{badge}{CubsActivityBadgeSkater=}
+  \setkeys{badge}{CubsActivityBadgeSportsEnthusiast=}
+  \setkeys{badge}{CubsActivityBadgeWaterActivities=}
+  \setkeys{badge}{CubsActivityBadgeWorldFaiths=}
+  \setkeys{badge}{CubsChallengeAwardOurAdventure=}
+  \setkeys{badge}{CubsChallengeAwardOurOutdoors=}
+  \setkeys{badge}{CubsChallengeAwardOurSkills=}
+  \setkeys{badge}{CubsChallengeAwardOurWorld=}
+  \setkeys{badge}{CubsChallengeAwardPersonal=}
+  \setkeys{badge}{CubsChallengeAwardTeamLeader=}
+  \setkeys{badge}{CubsChallengeAwardTeamwork=}
+  \setkeys{badge}{CubsChiefScoutsSilverAward=}
+  \setkeys{badge}{CubsYouShapeAwardCentral=}
+  \setkeys{badge}{CubsYouShapeAwardLead=}
+  \setkeys{badge}{CubsYouShapeAwardPlan=}
+  \setkeys{badge}{CubsYouShapeAwardRepresent=}
+  \setkeys{badge}{ScoutsActivityBadgeActivityPlus=}
+  \setkeys{badge}{ScoutsActivityBadgeActivityCentreService=}
+  \setkeys{badge}{ScoutsActivityBadgeAirorSeaNavigation=}
+  \setkeys{badge}{ScoutsActivityBadgeAirResearch=}
+  \setkeys{badge}{ScoutsActivityBadgeAirSpotter=}
+  \setkeys{badge}{ScoutsActivityBadgeAngler=}
+  \setkeys{badge}{ScoutsActivityBadgeArtist=}
+  \setkeys{badge}{ScoutsActivityBadgeAstronautics=}
+  \setkeys{badge}{ScoutsActivityBadgeAstronomer=}
+  \setkeys{badge}{ScoutsActivityBadgeAthleticsPlus=}
+  \setkeys{badge}{ScoutsActivityBadgeAthletics=}
+  \setkeys{badge}{ScoutsActivityBadgeCamper=}
+  \setkeys{badge}{ScoutsActivityBadgeCaver=}
+  \setkeys{badge}{ScoutsActivityBadgeChef=}
+  \setkeys{badge}{ScoutsActivityBadgeCircusSkills=}
+  \setkeys{badge}{ScoutsActivityBadgeClimber=}
+  \setkeys{badge}{ScoutsActivityBadgeCommunicator=}
+  \setkeys{badge}{ScoutsActivityBadgeCraft=}
+  \setkeys{badge}{ScoutsActivityBadgeCyclist=}
+  \setkeys{badge}{ScoutsActivityBadgeDIY=}
+  \setkeys{badge}{ScoutsActivityBadgeDragonBoating=}
+  \setkeys{badge}{ScoutsActivityBadgeElectronics=}
+  \setkeys{badge}{ScoutsActivityBadgeEntertainer=}
+  \setkeys{badge}{ScoutsActivityBadgeEnvironmentalConservation=}
+  \setkeys{badge}{ScoutsActivityBadgeEquestrian=}
+  \setkeys{badge}{ScoutsActivityBadgeFarming=}
+  \setkeys{badge}{ScoutsActivityBadgeFireSafety=}
+  \setkeys{badge}{ScoutsActivityBadgeForester=}
+  \setkeys{badge}{ScoutsActivityBadgeFundraising=}
+  \setkeys{badge}{ScoutsActivityBadgeGeocaching=}
+  \setkeys{badge}{ScoutsActivityBadgeGlobalIssues=}
+  \setkeys{badge}{ScoutsActivityBadgeHillWalker=}
+  \setkeys{badge}{ScoutsActivityBadgeHobbies=}
+  \setkeys{badge}{ScoutsActivityBadgeInstructor=}
+  \setkeys{badge}{ScoutsActivityBadgeInternational=}
+  \setkeys{badge}{ScoutsActivityBadgeLibrarian=}
+  \setkeys{badge}{ScoutsActivityBadgeLifesaver=}
+  \setkeys{badge}{ScoutsActivityBadgeLocalKnowledge=}
+  \setkeys{badge}{ScoutsActivityBadgeMartialArts=}
+  \setkeys{badge}{ScoutsActivityBadgeMasteratArms=}
+  \setkeys{badge}{ScoutsActivityBadgeMechanic=}
+  \setkeys{badge}{ScoutsActivityBadgeMediaRelationsandMarketing=}
+  \setkeys{badge}{ScoutsActivityBadgeMeteorologist=}
+  \setkeys{badge}{ScoutsActivityBadgeModelMaker=}
+  \setkeys{badge}{ScoutsActivityBadgeMyFaith=}
+  \setkeys{badge}{ScoutsActivityBadgeNaturalist=}
+  \setkeys{badge}{ScoutsActivityBadgeOrienteer=}
+  \setkeys{badge}{ScoutsActivityBadgeParascending=}
+  \setkeys{badge}{ScoutsActivityBadgePhotographer=}
+  \setkeys{badge}{ScoutsActivityBadgePhysicalRecreation=}
+  \setkeys{badge}{ScoutsActivityBadgePioneer=}
+  \setkeys{badge}{ScoutsActivityBadgePowerCoxswain=}
+  \setkeys{badge}{ScoutsActivityBadgePullingFixedSeatRowing=}
+  \setkeys{badge}{ScoutsActivityBadgeQuartermaster=}
+  \setkeys{badge}{ScoutsActivityBadgeScientist=}
+  \setkeys{badge}{ScoutsActivityBadgeSportsEnthusiast=}
+  \setkeys{badge}{ScoutsActivityBadgeStreetSports=}
+  \setkeys{badge}{ScoutsActivityBadgeSurvivalSkills=}
+  \setkeys{badge}{ScoutsActivityBadgeWaterActivities=}
+  \setkeys{badge}{ScoutsActivityBadgeWorldFaiths=}
+  \setkeys{badge}{ScoutsActivityBadgeWriter=}
+  \setkeys{badge}{ScoutsChallengeAwardAdventure=}
+  \setkeys{badge}{ScoutsChallengeAwardCreative=}
+  \setkeys{badge}{ScoutsChallengeAwardExpedition=}
+  \setkeys{badge}{ScoutsChallengeAwardOutdoors=}
+  \setkeys{badge}{ScoutsChallengeAwardPersonal=}
+  \setkeys{badge}{ScoutsChallengeAwardSkills=}
+  \setkeys{badge}{ScoutsChallengeAwardTeamLeader=}
+  \setkeys{badge}{ScoutsChallengeAwardTeamwork=}
+  \setkeys{badge}{ScoutsChallengeAwardWorld=}
+  \setkeys{badge}{ScoutsChiefScoutsGoldAward=}
+  \setkeys{badge}{ScoutsYouShapeAwardCentral=}
+  \setkeys{badge}{ScoutsYouShapeAwardLead=}
+  \setkeys{badge}{ScoutsYouShapeAwardPlan=}
+  \setkeys{badge}{ScoutsYouShapeAwardRepresent=}
+  \setkeys{badge}{ExplorersActivityBadgeMediaRelations=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeAirActivities=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeCommunityImpact=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeDigitalCitizen=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeDigitalMaker=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeEmergencyAid=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeHikesAway=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeMusician=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeNauticalSkills=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeNavigator=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeNightsAway=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgePaddleSports=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeSailing=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeSnowsports=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeSwimming=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeTheGreatIndoors=}
+  \setkeys{badge}{AllSectionsStagedActivityBadgeTimeontheWater=}
+  \setkeys{badge}{#1}
+
+  \raggedright \textbf{This activity contributes to the following badges:}\par
+
+  \ifx\badge@SquirrelsActivityBadgeStoryTime\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/squirrels/activity-badges/story-time/}{\includegraphics[width=\badgewidth]{SquirrelsActivityBadgeStoryTime}}%
+  \end{center}\badge@textsize\badge@SquirrelsActivityBadgeStoryTime%
+  \end{minipage}\hspace{3mm}
+  \fi%
+  \ifx\badge@BeaversActivityBadgeActivityPlus\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/activity-plus/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeActivityPlus}}%
+  \end{center}\badge@BeaversActivityBadgeActivityPlus%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeAnimalFriend\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/animal-friend/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeAnimalFriend}}%
+  \end{center}\badge@BeaversActivityBadgeAnimalFriend%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeBookReader\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/book-reader/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeBookReader}}%
+  \end{center}\badge@BeaversActivityBadgeBookReader%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeBuilder\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/builder/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeBuilder}}%
+  \end{center}\badge@BeaversActivityBadgeBuilder%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeCampCraft\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/camp-craft/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeCampCraft}}%
+  \end{center}\badge@BeaversActivityBadgeCampCraft%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeCollector\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/collector/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeCollector}}%
+  \end{center}\badge@BeaversActivityBadgeCollector%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeCommunicator\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/communicator/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeCommunicator}}%
+  \end{center}\badge@BeaversActivityBadgeCommunicator%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeCook\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/cook/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeCook}}%
+  \end{center}\badge@BeaversActivityBadgeCook%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeCreative\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/creative/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeCreative}}%
+  \end{center}\badge@BeaversActivityBadgeCreative%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeCyclist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/cyclist/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeCyclist}}%
+  \end{center}\badge@BeaversActivityBadgeCyclist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeDisabilityAwareness\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/disability-awareness/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeDisabilityAwareness}}%
+  \end{center}\badge@BeaversActivityBadgeDisabilityAwareness%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeExperiment\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/experiment/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeExperiment}}%
+  \end{center}\badge@BeaversActivityBadgeExperiment%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeExplore\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/explore/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeExplore}}%
+  \end{center}\badge@BeaversActivityBadgeExplore%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeFaith\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/faith/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeFaith}}%
+  \end{center}\badge@BeaversActivityBadgeFaith%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeGardener\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/gardener/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeGardener}}%
+  \end{center}\badge@BeaversActivityBadgeGardener%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeGlobalIssues\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/global-issues/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeGlobalIssues}}%
+  \end{center}\badge@BeaversActivityBadgeGlobalIssues%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeHealthandFitness\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/health-and-fitness/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeHealthandFitness}}%
+  \end{center}\badge@BeaversActivityBadgeHealthandFitness%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeHobbies\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/hobbies/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeHobbies}}%
+  \end{center}\badge@BeaversActivityBadgeHobbies%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeInternational\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/international/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeInternational}}%
+  \end{center}\badge@BeaversActivityBadgeInternational%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeMoneySkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/money-skills-activity-badge/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeMoneySkills}}%
+  \end{center}\badge@BeaversActivityBadgeMoneySkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgePhotographer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/photographer/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgePhotographer}}%
+  \end{center}\badge@BeaversActivityBadgePhotographer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeSafety\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/safety/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeSafety}}%
+  \end{center}\badge@BeaversActivityBadgeSafety%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeSpace\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/space/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeSpace}}%
+  \end{center}\badge@BeaversActivityBadgeSpace%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversActivityBadgeSports\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/activity-badges/sports/}{\includegraphics[width=\badgewidth]{BeaversActivityBadgeSports}}%
+  \end{center}\badge@BeaversActivityBadgeSports%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversChallengeAwardMyAdventure\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/my-adventure/}{\includegraphics[width=\badgewidth]{BeaversChallengeAwardMyAdventure}}%
+  \end{center}\badge@BeaversChallengeAwardMyAdventure%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversChallengeAwardMyOutdoors\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/my-outdoors/}{\includegraphics[width=\badgewidth]{BeaversChallengeAwardMyOutdoors}}%
+  \end{center}\badge@BeaversChallengeAwardMyOutdoors%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversChallengeAwardMySkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/my-skills/}{\includegraphics[width=\badgewidth]{BeaversChallengeAwardMySkills}}%
+  \end{center}\badge@BeaversChallengeAwardMySkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversChallengeAwardMyWorld\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/my-world/}{\includegraphics[width=\badgewidth]{BeaversChallengeAwardMyWorld}}%
+  \end{center}\badge@BeaversChallengeAwardMyWorld%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversChallengeAwardPersonal\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/personal/}{\includegraphics[width=\badgewidth]{BeaversChallengeAwardPersonal}}%
+  \end{center}\badge@BeaversChallengeAwardPersonal%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversChallengeAwardTeamwork\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/teamwork/}{\includegraphics[width=\badgewidth]{BeaversChallengeAwardTeamwork}}%
+  \end{center}\badge@BeaversChallengeAwardTeamwork%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversChiefScoutsBronzeAward\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/top-awards/chief-scout-s-bronze-award/}{\includegraphics[width=\badgewidth]{BeaversChiefScoutsBronzeAward}}%
+  \end{center}\badge@BeaversChiefScoutsBronzeAward%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversYouShapeAwardCentral\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/youshape-award-central-badge/}{\includegraphics[width=\badgewidth]{BeaversYouShapeAwardCentral}}%
+  \end{center}\badge@BeaversYouShapeAwardCentral%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversYouShapeAwardLead\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/youshape-award-lead/}{\includegraphics[width=\badgewidth]{BeaversYouShapeAwardLead}}%
+  \end{center}\badge@BeaversYouShapeAwardLead%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversYouShapeAwardPlan\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/youshape-award-plan/}{\includegraphics[width=\badgewidth]{BeaversYouShapeAwardPlan}}%
+  \end{center}\badge@BeaversYouShapeAwardPlan%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@BeaversYouShapeAwardRepresent\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/beavers/awards/youshape-award-represent/}{\includegraphics[width=\badgewidth]{BeaversYouShapeAwardRepresent}}%
+  \end{center}\badge@BeaversYouShapeAwardRepresent%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeActivityPlus\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/activity-plus/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeActivityPlus}}%
+  \end{center}\badge@CubsActivityBadgeActivityPlus%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeAnimalCarer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/animal-carer/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeAnimalCarer}}%
+  \end{center}\badge@CubsActivityBadgeAnimalCarer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeArtist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/artist/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeArtist}}%
+  \end{center}\badge@CubsActivityBadgeArtist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeAstronomer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/astronomer/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeAstronomer}}%
+  \end{center}\badge@CubsActivityBadgeAstronomer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeAthleticsPlus\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/athletics-plus/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeAthleticsPlus}}%
+  \end{center}\badge@CubsActivityBadgeAthleticsPlus%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeAthletics\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/athletics-activity-badge/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeAthletics}}%
+  \end{center}\badge@CubsActivityBadgeAthletics%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeBackwoodsCooking\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/backwoods-cooking/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeBackwoodsCooking}}%
+  \end{center}\badge@CubsActivityBadgeBackwoodsCooking%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeBookReader\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/book-reader/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeBookReader}}%
+  \end{center}\badge@CubsActivityBadgeBookReader%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeChef\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/chef/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeChef}}%
+  \end{center}\badge@CubsActivityBadgeChef%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeCollector\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/collector/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeCollector}}%
+  \end{center}\badge@CubsActivityBadgeCollector%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeCommunicator\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/communicator/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeCommunicator}}%
+  \end{center}\badge@CubsActivityBadgeCommunicator%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeCyclist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/cyclist/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeCyclist}}%
+  \end{center}\badge@CubsActivityBadgeCyclist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeDisabilityAwareness\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/disability-awareness/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeDisabilityAwareness}}%
+  \end{center}\badge@CubsActivityBadgeDisabilityAwareness%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeDIY\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/diy/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeDIY}}%
+  \end{center}\badge@CubsActivityBadgeDIY%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeEntertainer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/entertainer/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeEntertainer}}%
+  \end{center}\badge@CubsActivityBadgeEntertainer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeEnvironmentalConservation\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/environmental-conservation/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeEnvironmentalConservation}}%
+  \end{center}\badge@CubsActivityBadgeEnvironmentalConservation%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeEquestrian\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/equestrian/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeEquestrian}}%
+  \end{center}\badge@CubsActivityBadgeEquestrian%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeFireSafety\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/fire-safety/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeFireSafety}}%
+  \end{center}\badge@CubsActivityBadgeFireSafety%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeGardener\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/gardener/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeGardener}}%
+  \end{center}\badge@CubsActivityBadgeGardener%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeGlobalIssues\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/global-issues/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeGlobalIssues}}%
+  \end{center}\badge@CubsActivityBadgeGlobalIssues%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeHobbies\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/hobbies/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeHobbies}}%
+  \end{center}\badge@CubsActivityBadgeHobbies%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeHomeHelp\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/home-help/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeHomeHelp}}%
+  \end{center}\badge@CubsActivityBadgeHomeHelp%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeHomeSafety\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/home-safety/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeHomeSafety}}%
+  \end{center}\badge@CubsActivityBadgeHomeSafety%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeInternational\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/international/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeInternational}}%
+  \end{center}\badge@CubsActivityBadgeInternational%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeLocalKnowledge\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/local-knowledge/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeLocalKnowledge}}%
+  \end{center}\badge@CubsActivityBadgeLocalKnowledge%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeMartialArts\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/martial-arts/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeMartialArts}}%
+  \end{center}\badge@CubsActivityBadgeMartialArts%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeMoneySkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/money-skills-activity-badge/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeMoneySkills}}%
+  \end{center}\badge@CubsActivityBadgeMoneySkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeMyFaith\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/my-faith/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeMyFaith}}%
+  \end{center}\badge@CubsActivityBadgeMyFaith%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeNaturalist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/naturalist/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeNaturalist}}%
+  \end{center}\badge@CubsActivityBadgeNaturalist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgePersonalSafety\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/personal-safety/}{\includegraphics[width=\badgewidth]{CubsActivityBadgePersonalSafety}}%
+  \end{center}\badge@CubsActivityBadgePersonalSafety%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgePhotographer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/photographer/}{\includegraphics[width=\badgewidth]{CubsActivityBadgePhotographer}}%
+  \end{center}\badge@CubsActivityBadgePhotographer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgePhysicalRecreation\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/physical-recreation/}{\includegraphics[width=\badgewidth]{CubsActivityBadgePhysicalRecreation}}%
+  \end{center}\badge@CubsActivityBadgePhysicalRecreation%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgePioneer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/pioneer/}{\includegraphics[width=\badgewidth]{CubsActivityBadgePioneer}}%
+  \end{center}\badge@CubsActivityBadgePioneer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeRoadSafety\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/road-safety/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeRoadSafety}}%
+  \end{center}\badge@CubsActivityBadgeRoadSafety%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeScientist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/scientist/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeScientist}}%
+  \end{center}\badge@CubsActivityBadgeScientist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeSkater\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/skater/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeSkater}}%
+  \end{center}\badge@CubsActivityBadgeSkater%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeSportsEnthusiast\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/sports-enthusiast/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeSportsEnthusiast}}%
+  \end{center}\badge@CubsActivityBadgeSportsEnthusiast%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeWaterActivities\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/water-activities/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeWaterActivities}}%
+  \end{center}\badge@CubsActivityBadgeWaterActivities%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsActivityBadgeWorldFaiths\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/activity-badges/world-faiths/}{\includegraphics[width=\badgewidth]{CubsActivityBadgeWorldFaiths}}%
+  \end{center}\badge@CubsActivityBadgeWorldFaiths%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChallengeAwardOurAdventure\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/our-adventure/}{\includegraphics[width=\badgewidth]{CubsChallengeAwardOurAdventure}}%
+  \end{center}\badge@CubsChallengeAwardOurAdventure%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChallengeAwardOurOutdoors\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/our-outdoors/}{\includegraphics[width=\badgewidth]{CubsChallengeAwardOurOutdoors}}%
+  \end{center}\badge@CubsChallengeAwardOurOutdoors%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChallengeAwardOurSkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/our-skills/}{\includegraphics[width=\badgewidth]{CubsChallengeAwardOurSkills}}%
+  \end{center}\badge@CubsChallengeAwardOurSkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChallengeAwardOurWorld\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/our-world/}{\includegraphics[width=\badgewidth]{CubsChallengeAwardOurWorld}}%
+  \end{center}\badge@CubsChallengeAwardOurWorld%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChallengeAwardPersonal\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/personal/}{\includegraphics[width=\badgewidth]{CubsChallengeAwardPersonal}}%
+  \end{center}\badge@CubsChallengeAwardPersonal%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChallengeAwardTeamLeader\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/team-leader/}{\includegraphics[width=\badgewidth]{CubsChallengeAwardTeamLeader}}%
+  \end{center}\badge@CubsChallengeAwardTeamLeader%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChallengeAwardTeamwork\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/teamwork/}{\includegraphics[width=\badgewidth]{CubsChallengeAwardTeamwork}}%
+  \end{center}\badge@CubsChallengeAwardTeamwork%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsChiefScoutsSilverAward\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/top-awards/chief-scout-s-silver-award/}{\includegraphics[width=\badgewidth]{CubsChiefScoutsSilverAward}}%
+  \end{center}\badge@CubsChiefScoutsSilverAward%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsYouShapeAwardCentral\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/youshape-award-central-badge/}{\includegraphics[width=\badgewidth]{CubsYouShapeAwardCentral}}%
+  \end{center}\badge@CubsYouShapeAwardCentral%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsYouShapeAwardLead\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/youshape-award-lead/}{\includegraphics[width=\badgewidth]{CubsYouShapeAwardLead}}%
+  \end{center}\badge@CubsYouShapeAwardLead%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsYouShapeAwardPlan\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/youshape-award-plan/}{\includegraphics[width=\badgewidth]{CubsYouShapeAwardPlan}}%
+  \end{center}\badge@CubsYouShapeAwardPlan%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@CubsYouShapeAwardRepresent\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/cubs/awards/youshape-award-represent/}{\includegraphics[width=\badgewidth]{CubsYouShapeAwardRepresent}}%
+  \end{center}\badge@CubsYouShapeAwardRepresent%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeActivityPlus\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/activity-plus/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeActivityPlus}}%
+  \end{center}\badge@ScoutsActivityBadgeActivityPlus%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeActivityCentreService\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/activity-centre-service/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeActivityCentreService}}%
+  \end{center}\badge@ScoutsActivityBadgeActivityCentreService%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAirorSeaNavigation\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/air-or-sea-navigation/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAirorSeaNavigation}}%
+  \end{center}\badge@ScoutsActivityBadgeAirorSeaNavigation%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAirResearch\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/air-researcher/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAirResearch}}%
+  \end{center}\badge@ScoutsActivityBadgeAirResearch%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAirSpotter\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/air-spotter/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAirSpotter}}%
+  \end{center}\badge@ScoutsActivityBadgeAirSpotter%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAngler\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/angler/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAngler}}%
+  \end{center}\badge@ScoutsActivityBadgeAngler%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeArtist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/artist/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeArtist}}%
+  \end{center}\badge@ScoutsActivityBadgeArtist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAstronautics\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/astronautics/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAstronautics}}%
+  \end{center}\badge@ScoutsActivityBadgeAstronautics%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAstronomer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/astronomer/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAstronomer}}%
+  \end{center}\badge@ScoutsActivityBadgeAstronomer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAthleticsPlus\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/athletics-plus/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAthleticsPlus}}%
+  \end{center}\badge@ScoutsActivityBadgeAthleticsPlus%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeAthletics\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/athletics/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeAthletics}}%
+  \end{center}\badge@ScoutsActivityBadgeAthletics%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeCamper\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/camper/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeCamper}}%
+  \end{center}\badge@ScoutsActivityBadgeCamper%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeCaver\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/caver/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeCaver}}%
+  \end{center}\badge@ScoutsActivityBadgeCaver%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeChef\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/chef/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeChef}}%
+  \end{center}\badge@ScoutsActivityBadgeChef%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeCircusSkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/circus-skills/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeCircusSkills}}%
+  \end{center}\badge@ScoutsActivityBadgeCircusSkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeClimber\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/climber/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeClimber}}%
+  \end{center}\badge@ScoutsActivityBadgeClimber%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeCommunicator\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/communicator/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeCommunicator}}%
+  \end{center}\badge@ScoutsActivityBadgeCommunicator%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeCraft\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/craft/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeCraft}}%
+  \end{center}\badge@ScoutsActivityBadgeCraft%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeCyclist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/cyclist/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeCyclist}}%
+  \end{center}\badge@ScoutsActivityBadgeCyclist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeDIY\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/diy/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeDIY}}%
+  \end{center}\badge@ScoutsActivityBadgeDIY%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeDragonBoating\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/dragon-boating/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeDragonBoating}}%
+  \end{center}\badge@ScoutsActivityBadgeDragonBoating%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeElectronics\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/electronics/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeElectronics}}%
+  \end{center}\badge@ScoutsActivityBadgeElectronics%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeEntertainer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/entertainer/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeEntertainer}}%
+  \end{center}\badge@ScoutsActivityBadgeEntertainer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeEnvironmentalConservation\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/environmental-conservation/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeEnvironmentalConservation}}%
+  \end{center}\badge@ScoutsActivityBadgeEnvironmentalConservation%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeEquestrian\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/equestrian/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeEquestrian}}%
+  \end{center}\badge@ScoutsActivityBadgeEquestrian%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeFarming\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/farming/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeFarming}}%
+  \end{center}\badge@ScoutsActivityBadgeFarming%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeFireSafety\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/fire-safety/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeFireSafety}}%
+  \end{center}\badge@ScoutsActivityBadgeFireSafety%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeForester\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/forester/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeForester}}%
+  \end{center}\badge@ScoutsActivityBadgeForester%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeFundraising\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/fundraising/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeFundraising}}%
+  \end{center}\badge@ScoutsActivityBadgeFundraising%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeGeocaching\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/geocaching/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeGeocaching}}%
+  \end{center}\badge@ScoutsActivityBadgeGeocaching%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeGlobalIssues\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/global-issues/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeGlobalIssues}}%
+  \end{center}\badge@ScoutsActivityBadgeGlobalIssues%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeHillWalker\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/hill-walker/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeHillWalker}}%
+  \end{center}\badge@ScoutsActivityBadgeHillWalker%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeHobbies\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/hobbies/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeHobbies}}%
+  \end{center}\badge@ScoutsActivityBadgeHobbies%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeInstructor\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/instructor/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeInstructor}}%
+  \end{center}\badge@ScoutsActivityBadgeInstructor%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeInternational\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/international/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeInternational}}%
+  \end{center}\badge@ScoutsActivityBadgeInternational%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeLibrarian\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/librarian/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeLibrarian}}%
+  \end{center}\badge@ScoutsActivityBadgeLibrarian%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeLifesaver\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/lifesaver/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeLifesaver}}%
+  \end{center}\badge@ScoutsActivityBadgeLifesaver%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeLocalKnowledge\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/local-knowledge/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeLocalKnowledge}}%
+  \end{center}\badge@ScoutsActivityBadgeLocalKnowledge%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeMartialArts\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/martial-arts/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeMartialArts}}%
+  \end{center}\badge@ScoutsActivityBadgeMartialArts%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeMasteratArms\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/master-at-arms/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeMasteratArms}}%
+  \end{center}\badge@ScoutsActivityBadgeMasteratArms%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeMechanic\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/mechanic/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeMechanic}}%
+  \end{center}\badge@ScoutsActivityBadgeMechanic%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeMediaRelationsandMarketing\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/media-relations-marketing/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeMediaRelationsandMarketing}}%
+  \end{center}\badge@ScoutsActivityBadgeMediaRelationsandMarketing%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeMeteorologist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/meteorologist/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeMeteorologist}}%
+  \end{center}\badge@ScoutsActivityBadgeMeteorologist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeModelMaker\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/model-maker/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeModelMaker}}%
+  \end{center}\badge@ScoutsActivityBadgeModelMaker%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeMyFaith\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/my-faith/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeMyFaith}}%
+  \end{center}\badge@ScoutsActivityBadgeMyFaith%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeNaturalist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/naturalist/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeNaturalist}}%
+  \end{center}\badge@ScoutsActivityBadgeNaturalist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeOrienteer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/orienteer/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeOrienteer}}%
+  \end{center}\badge@ScoutsActivityBadgeOrienteer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeParascending\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/parascending/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeParascending}}%
+  \end{center}\badge@ScoutsActivityBadgeParascending%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgePhotographer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/photographer/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgePhotographer}}%
+  \end{center}\badge@ScoutsActivityBadgePhotographer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgePhysicalRecreation\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/physical-recreation/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgePhysicalRecreation}}%
+  \end{center}\badge@ScoutsActivityBadgePhysicalRecreation%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgePioneer\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/pioneer/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgePioneer}}%
+  \end{center}\badge@ScoutsActivityBadgePioneer%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgePowerCoxswain\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/power-coxswain/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgePowerCoxswain}}%
+  \end{center}\badge@ScoutsActivityBadgePowerCoxswain%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgePullingFixedSeatRowing\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/pulling-fixed-seat-rowing/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgePullingFixedSeatRowing}}%
+  \end{center}\badge@ScoutsActivityBadgePullingFixedSeatRowing%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeQuartermaster\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/quartermaster/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeQuartermaster}}%
+  \end{center}\badge@ScoutsActivityBadgeQuartermaster%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeScientist\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/scientist/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeScientist}}%
+  \end{center}\badge@ScoutsActivityBadgeScientist%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeSportsEnthusiast\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/sports-enthusiast/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeSportsEnthusiast}}%
+  \end{center}\badge@ScoutsActivityBadgeSportsEnthusiast%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeStreetSports\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/street-sports/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeStreetSports}}%
+  \end{center}\badge@ScoutsActivityBadgeStreetSports%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeSurvivalSkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/survival-skills/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeSurvivalSkills}}%
+  \end{center}\badge@ScoutsActivityBadgeSurvivalSkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeWaterActivities\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/water-activities/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeWaterActivities}}%
+  \end{center}\badge@ScoutsActivityBadgeWaterActivities%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeWorldFaiths\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/world-faiths/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeWorldFaiths}}%
+  \end{center}\badge@ScoutsActivityBadgeWorldFaiths%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsActivityBadgeWriter\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/activity-badges/writer/}{\includegraphics[width=\badgewidth]{ScoutsActivityBadgeWriter}}%
+  \end{center}\badge@ScoutsActivityBadgeWriter%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardAdventure\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/adventure/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardAdventure}}%
+  \end{center}\badge@ScoutsChallengeAwardAdventure%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardCreative\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/creative/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardCreative}}%
+  \end{center}\badge@ScoutsChallengeAwardCreative%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardExpedition\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/expedition/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardExpedition}}%
+  \end{center}\badge@ScoutsChallengeAwardExpedition%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardOutdoors\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/outdoor/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardOutdoors}}%
+  \end{center}\badge@ScoutsChallengeAwardOutdoors%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardPersonal\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/personal/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardPersonal}}%
+  \end{center}\badge@ScoutsChallengeAwardPersonal%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardSkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/skills/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardSkills}}%
+  \end{center}\badge@ScoutsChallengeAwardSkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardTeamLeader\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/team-leader/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardTeamLeader}}%
+  \end{center}\badge@ScoutsChallengeAwardTeamLeader%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardTeamwork\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/teamwork/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardTeamwork}}%
+  \end{center}\badge@ScoutsChallengeAwardTeamwork%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChallengeAwardWorld\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/world/}{\includegraphics[width=\badgewidth]{ScoutsChallengeAwardWorld}}%
+  \end{center}\badge@ScoutsChallengeAwardWorld%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsChiefScoutsGoldAward\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/top-awards/chief-scout-s-gold-award/}{\includegraphics[width=\badgewidth]{ScoutsChiefScoutsGoldAward}}%
+  \end{center}\badge@ScoutsChiefScoutsGoldAward%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsYouShapeAwardCentral\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/youshape-award-central-badge/}{\includegraphics[width=\badgewidth]{ScoutsYouShapeAwardCentral}}%
+  \end{center}\badge@ScoutsYouShapeAwardCentral%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsYouShapeAwardLead\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/youshape-award-lead/}{\includegraphics[width=\badgewidth]{ScoutsYouShapeAwardLead}}%
+  \end{center}\badge@ScoutsYouShapeAwardLead%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsYouShapeAwardPlan\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/youshape-award-plan/}{\includegraphics[width=\badgewidth]{ScoutsYouShapeAwardPlan}}%
+  \end{center}\badge@ScoutsYouShapeAwardPlan%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ScoutsYouShapeAwardRepresent\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/scouts/awards/youshape-award-represent/}{\includegraphics[width=\badgewidth]{ScoutsYouShapeAwardRepresent}}%
+  \end{center}\badge@ScoutsYouShapeAwardRepresent%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@ExplorersActivityBadgeMediaRelations\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/explorers/activity-badges/media-relations-and-marketing/}{\includegraphics[width=\badgewidth]{ExplorersActivityBadgeMediaRelations}}%
+  \end{center}\badge@ExplorersActivityBadgeMediaRelations%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeAirActivities\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/air-activities/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeAirActivities}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeAirActivities%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeCommunityImpact\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/community-impact/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeCommunityImpact}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeCommunityImpact%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeDigitalCitizen\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/digital-citizen/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeDigitalCitizen}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeDigitalCitizen%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeDigitalMaker\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/digital-maker/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeDigitalMaker}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeDigitalMaker%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeEmergencyAid\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/emergency-aid/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeEmergencyAid}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeEmergencyAid%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeHikesAway\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/hikes-away/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeHikesAway}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeHikesAway%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeMusician\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/musician/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeMusician}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeMusician%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeNauticalSkills\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/nautical-skills/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeNauticalSkills}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeNauticalSkills%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeNavigator\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/navigator/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeNavigator}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeNavigator%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeNightsAway\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/nights-away/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeNightsAway}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeNightsAway%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgePaddleSports\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/paddle-sports/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgePaddleSports}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgePaddleSports%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeSailing\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/sailing/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeSailing}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeSailing%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeSnowsports\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/snowsports/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeSnowsports}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeSnowsports%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeSwimming\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/swimmer/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeSwimming}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeSwimming%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeTheGreatIndoors\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/the-great-indoors-badge/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeTheGreatIndoors}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeTheGreatIndoors%
+  \end{minipage}%
+
+  \fi%
+  \ifx\badge@AllSectionsStagedActivityBadgeTimeontheWater\@empty\else%
+  \begin{minipage}{\badgeinfowidth}%
+  \vspace{5mm}%
+  \begin{center}%
+  \href{https://www.scouts.org.uk/staged-badges/time-on-the-water/}{\includegraphics[width=\badgewidth]{AllSectionsStagedActivityBadgeTimeontheWater}}%
+  \end{center}\badge@AllSectionsStagedActivityBadgeTimeontheWater%
+  \end{minipage}%
+
+  \fi%
+}
+\newcommand{\badgelist}{
+% set all ifbadges to false for default
+SquirrelsActivityBadgeStoryTime\\
+BeaversActivityBadgeActivityPlus\\
+BeaversActivityBadgeAnimalFriend\\
+BeaversActivityBadgeBookReader\\
+BeaversActivityBadgeBuilder\\
+BeaversActivityBadgeCampCraft\\
+BeaversActivityBadgeCollector\\
+BeaversActivityBadgeCommunicator\\
+BeaversActivityBadgeCook\\
+BeaversActivityBadgeCreative\\
+BeaversActivityBadgeCyclist\\
+BeaversActivityBadgeDisabilityAwareness\\
+BeaversActivityBadgeExperiment\\
+BeaversActivityBadgeExplore\\
+BeaversActivityBadgeFaith\\
+BeaversActivityBadgeGardener\\
+BeaversActivityBadgeGlobalIssues\\
+BeaversActivityBadgeHealthandFitness\\
+BeaversActivityBadgeHobbies\\
+BeaversActivityBadgeInternational\\
+BeaversActivityBadgeMoneySkills\\
+BeaversActivityBadgePhotographer\\
+BeaversActivityBadgeSafety\\
+BeaversActivityBadgeSpace\\
+BeaversActivityBadgeSports\\
+BeaversChallengeAwardMyAdventure\\
+BeaversChallengeAwardMyOutdoors\\
+BeaversChallengeAwardMySkills\\
+BeaversChallengeAwardMyWorld\\
+BeaversChallengeAwardPersonal\\
+BeaversChallengeAwardTeamwork\\
+BeaversChiefScoutsBronzeAward\\
+BeaversYouShapeAwardCentral\\
+BeaversYouShapeAwardLead\\
+BeaversYouShapeAwardPlan\\
+BeaversYouShapeAwardRepresent\\
+CubssActivityBadgeActivityPlus\\
+CubsActivityBadgeAnimalCarer\\
+CubsActivityBadgeArtist\\
+CubsActivityBadgeAstronomer\\
+CubsActivityBadgeAthleticsPlus\\
+CubsActivityBadgeAthletics\\
+CubsActivityBadgeBackwoodsCooking\\
+CubsActivityBadgeBookReader\\
+CubsActivityBadgeChef\\
+CubsActivityBadgeCollector\\
+CubsActivityBadgeCommunicator\\
+CubsActivityBadgeCyclist\\
+CubsActivityBadgeDisabilityAwareness\\
+CubsActivityBadgeDIY\\
+CubsActivityBadgeEntertainer\\
+CubsActivityBadgeEnvironmentalConservation\\
+CubsActivityBadgeEquestrian\\
+CubsActivityBadgeFireSafety\\
+CubsActivityBadgeGardener\\
+CubsActivityBadgeGlobalIssues\\
+CubsActivityBadgeHobbies\\
+CubsActivityBadgeHomeHelp\\
+CubsActivityBadgeHomeSafety\\
+CubsActivityBadgeInternational\\
+CubsActivityBadgeLocalKnowledge\\
+CubsActivityBadgeMartialArts\\
+CubsActivityBadgeMoneySkills\\
+CubsActivityBadgeMyFaith\\
+CubsActivityBadgeNaturalist\\
+CubsActivityBadgePersonalSafety\\
+CubsActivityBadgePhotographer\\
+CubsActivityBadgePhysicalRecreation\\
+CubsActivityBadgePioneer\\
+CubsActivityBadgeRoadSafety\\
+CubsActivityBadgeScientist\\
+CubsActivityBadgeSkater\\
+CubsActivityBadgeSportsEnthusiast\\
+CubsActivityBadgeWaterActivities\\
+CubsActivityBadgeWorldFaiths\\
+CubsChallengeAwardOurAdventure\\
+CubsChallengeAwardOurOutdoors\\
+CubsChallengeAwardOurSkills\\
+CubsChallengeAwardOurWorld\\
+CubsChallengeAwardPersonal\\
+CubsChallengeAwardTeamLeader\\
+CubsChallengeAwardTeamwork\\
+CubsChiefScoutsSilverAward\\
+CubsYouShapeAwardCentral\\
+CubsYouShapeAwardLead\\
+CubsYouShapeAwardPlan\\
+CubsYouShapeAwardRepresent\\
+BeaversActivityBadgeActivityPlus\\
+ScoutsActivityBadgeActivityCentreService\\
+ScoutsActivityBadgeAirorSeaNavigation\\
+ScoutsActivityBadgeAirResearch\\
+ScoutsActivityBadgeAirSpotter\\
+ScoutsActivityBadgeAngler\\
+ScoutsActivityBadgeArtist\\
+ScoutsActivityBadgeAstronautics\\
+ScoutsActivityBadgeAstronomer\\
+ScoutsActivityBadgeAthleticsPlus\\
+ScoutsActivityBadgeAthletics\\
+ScoutsActivityBadgeCamper\\
+ScoutsActivityBadgeCaver\\
+ScoutsActivityBadgeChef\\
+ScoutsActivityBadgeCircusSkills\\
+ScoutsActivityBadgeClimber\\
+ScoutsActivityBadgeCommunicator\\
+ScoutsActivityBadgeCraft\\
+ScoutsActivityBadgeCyclist\\
+ScoutsActivityBadgeDIY\\
+ScoutsActivityBadgeDragonBoating\\
+ScoutsActivityBadgeElectronics\\
+ScoutsActivityBadgeEntertainer\\
+ScoutsActivityBadgeEnvironmentalConservation\\
+ScoutsActivityBadgeEquestrian\\
+ScoutsActivityBadgeFarming\\
+ScoutsActivityBadgeFireSafety\\
+ScoutsActivityBadgeForester\\
+ScoutsActivityBadgeFundraising\\
+ScoutsActivityBadgeGeocaching\\
+ScoutsActivityBadgeGlobalIssues\\
+ScoutsActivityBadgeHillWalker\\
+ScoutsActivityBadgeHobbies\\
+ScoutsActivityBadgeInstructor\\
+ScoutsActivityBadgeInternational\\
+ScoutsActivityBadgeLibrarian\\
+ScoutsActivityBadgeLifesaver\\
+ScoutsActivityBadgeLocalKnowledge\\
+ScoutsActivityBadgeMartialArts\\
+ScoutsActivityBadgeMasteratArms\\
+ScoutsActivityBadgeMechanic\\
+ScoutsActivityBadgeMediaRelationsandMarketing\\
+ScoutsActivityBadgeMeteorologist\\
+ScoutsActivityBadgeModelMaker\\
+ScoutsActivityBadgeMyFaith\\
+ScoutsActivityBadgeNaturalist\\
+ScoutsActivityBadgeOrienteer\\
+ScoutsActivityBadgeParascending\\
+ScoutsActivityBadgePhotographer\\
+ScoutsActivityBadgePhysicalRecreation\\
+ScoutsActivityBadgePioneer\\
+ScoutsActivityBadgePowerCoxswain\\
+ScoutsActivityBadgePullingFixedSeatRowing\\
+ScoutsActivityBadgeQuartermaster\\
+ScoutsActivityBadgeScientist\\
+ScoutsActivityBadgeSportsEnthusiast\\
+ScoutsActivityBadgeStreetSports\\
+ScoutsActivityBadgeSurvivalSkills\\
+ScoutsActivityBadgeWaterActivities\\
+ScoutsActivityBadgeWorldFaiths\\
+ScoutsActivityBadgeWriter\\
+ScoutsChallengeAwardAdventure\\
+ScoutsChallengeAwardCreative\\
+ScoutsChallengeAwardExpedition\\
+ScoutsChallengeAwardOutdoors\\
+ScoutsChallengeAwardPersonal\\
+ScoutsChallengeAwardSkills\\
+ScoutsChallengeAwardTeamLeader\\
+ScoutsChallengeAwardTeamwork\\
+ScoutsChallengeAwardWorld\\
+ScoutsChiefScoutsGoldAward\\
+ScoutsYouShapeAwardCentral\\
+ScoutsYouShapeAwardLead\\
+ScoutsYouShapeAwardPlan\\
+ScoutsYouShapeAwardRepresent\\
+ExplorersActivityBadgeMediaRelations\\
+AllSectionsStagedActivityBadgeAirActivities\\
+AllSectionsStagedActivityBadgeCommunityImpact\\
+AllSectionsStagedActivityBadgeDigitalCitizen\\
+AllSectionsStagedActivityBadgeDigitalMaker\\
+AllSectionsStagedActivityBadgeEmergencyAid\\
+AllSectionsStagedActivityBadgeHikesAway\\
+AllSectionsStagedActivityBadgeMusician\\
+AllSectionsStagedActivityBadgeNauticalSkills\\
+AllSectionsStagedActivityBadgeNavigator\\
+AllSectionsStagedActivityBadgeNightsAway\\
+AllSectionsStagedActivityBadgePaddleSports\\
+AllSectionsStagedActivityBadgeSailing\\
+AllSectionsStagedActivityBadgeSnowsports\\
+AllSectionsStagedActivityBadgeSwimming\\
+AllSectionsStagedActivityBadgeTheGreatIndoors\\
+AllSectionsStagedActivityBadgeTimeontheWater\\
+}

@@ -1,0 +1,214 @@
+\documentclass[a4paper]{GreyWolfsScoutActivityTemplate}
+
+\usepackage{GreyWolfsScoutFleurDeLis} % For drawing a Fleur-de-lis
+\usepackage{lipsum}
+%\usepackage {showframe}
+\title{Scout Activity} % 
+% Set your author text; this will be shown in the footnotes
+\author{\href{mailto:mike.jones@mansouthscouts.org.uk}{Mike Jones} CSL @ \href{http://23rdMcr.uk}{23\textsuperscript{rd} Mcr Scout Grp}}
+
+% Change the badge widths default 3cm
+%\setlength{\badgewidth}{3cm}
+
+% Change the licence in the footer. The default is:
+%\licence{\href{https://creativecommons.org/licenses/by-sa/4.0/}{\color{black} \ccbysa}}
+
+\begin{document}
+
+\activitypart[
+  SquirrelsActivityBadgeStoryTime={Now this is the story all about how. My life got flipped, turned upside down. And I'd like to take a minute just sit and wait,
+  While I tell you how to use this \LaTeX{} template.},
+  AllSectionsStagedActivityBadgeDigitalCitizen=There is no badge for Adults.,
+  ExplorersActivityBadgeMediaRelations=I expect using this template is in the right ball park for the Media Relations badge. Unfortunately I've yet to add Explorers and Squirrels badges (except these two).]{\mbox{Activity documents}}
+
+\Sections[scouts,cubs,explorers]
+
+\section*{Introduction}
+Some instructions on how to use this template to create a Scout branded Activity document.
+This is a latex template based on the Scout Brand Centre's Activity Word Document template {\tt ms-word-document-template-activity.docx}. 
+
+\begin{SummaryImageBox}{Scout-Activity-Electroetching-pp1}
+\sessiontime[30 minutes]
+\section*{Equipment}
+\equip{Badge info}
+\equip{Timings}
+\equip{Section suitability}
+\equip{Activity title}
+\equip{Procedure}
+\equip{This template!}
+\subsection*{Optional}
+\equip{Image}
+\equip{Risk assessment}
+\equip{Discussion ideas}
+\end{SummaryImageBox}
+
+\begin{ActivityProcedure}
+\section{}
+First you need this template! Have a look at the compiled PDF and the source {\tt main.tex}. 
+In the preamble set your {\tt \textbackslash{}author\{\}} variable. 
+\section{}
+The rest of your contents will be placed between the {\tt \textbackslash{}begin\{document\}} and the {\tt \textbackslash{}end\{document\}}.
+\section{}
+To start each Activity \textit{part}, use the command {\tt \small{\textbackslash{}activitypart\{Title\}}}
+\section{}
+To list badges on the left-hand-side, you need to add an option to that command:\\ {\tt \small{\textbackslash{}activitypart\\\hspace*{5mm}[name=text,\ldots]\{\ldots\}}}. Where {\tt name} is the name of a badge as listed in section~\ref{badges} below, and {\tt text} is the text you wish to appear beneath it.
+\section{}
+Now use the {\tt \textbackslash{}Sections[]} command to specify which \textit{\color{ScoutPurple} Scout} sections this activity is suitable for, e.g.\\{\tt \small{\textbackslash{}Sections[scouts,cubs]}}
+\section{}
+If you wish you can add an introduction. Add the line {\tt \textbackslash{}section*\{Introduction\}} followed by text. You can use this method to add any section you like in the main body of the document. see e.g. the Risk Assessment section \ref{RA} below.
+
+Use the asterisked versions if you wish ro avoid section numbering.
+\section{}
+Add a 2-column summary.
+
+\subsection{}
+To add a summary and graphic use the environment: {\tt SummaryImageBox} and specify a graphic you wish to use. e.g.\\
+{\tt \textbackslash{}begin\{SummaryImageBox\}\\\hspace*{5mm}\{ImageLocation\}}\\
+\%Insert left content here.\\
+{\tt \textbackslash{}end\{SummaryImageBox\}}
+
+\subsection{}
+Alternatively, to add a summary-left and other-content-right use the environment: {\tt SummaryBox} e.g.\\ 
+{\tt \textbackslash{}begin\{SummaryBox\}\\\hspace*{5mm}\{ImageLocation\}}\\
+\%Insert left content here\\
+{\tt \textbackslash{}SummaryBoxSep}\\
+\%Insert right content here.\\
+{\tt \textbackslash{}end\{SummaryBox\}}
+
+\section{}
+Suggestions for filling the \textit{summary} left-content:
+
+\subsection{}
+Specify Duration of session using this command: e.g.\\
+{\tt \textbackslash{}sessiontime[30~minutes]}
+
+\subsection{}
+Add an equipment section:\\
+{\tt \small{
+\textbackslash{}section*\{Equipment\}\\
+\textbackslash{}equip\{Badge info\}\\
+\textbackslash{}equip\{Timings\}\\
+\textbackslash{}equip\{Section suitability\}\\
+\textbackslash{}equip\{Activity title\}\\
+\textbackslash{}equip\{Procedure\}\\
+\textbackslash{}equip\{This template!\}\\
+\textbackslash{}subsection*\{Optional\}\\
+\textbackslash{}equip\{Image\}\\
+\textbackslash{}equip\{Risk assessment\}\\
+\textbackslash{}equip\{Discussion ideas\}
+}}
+
+\subsection{}
+End the Summary\ldots{}Box:\\
+{\tt \textbackslash{}end\{SummaryImageBox\}}\\
+or\\
+{\tt \textbackslash{}end\{SummaryBox\}}
+
+\section{}
+To fill the step-by-step activity instructions now create an {\tt ActivityProcedure} environment. This will split up the flow of text into three columns and change the space and size of the heading.
+
+\subsection{}
+Use blank \textbackslash{}section\{\} and \textbackslash{}subsection\{\} commands to create numbered paragraphs.
+
+\end{ActivityProcedure}
+
+
+
+\section*{Discussion}
+Use most any \LaTeX{} commands to fill remaining sections.
+You could add:
+\begin{itemize}
+ \item a \textit{Discussion} section; 
+ \item a \textit{Risk Assessment section};
+ \item an \textit{Acknowledgement} section.
+\end{itemize}
+
+
+
+\section*{Risk Assessment}
+\label{RA}
+Have you done a DSE assessment? \href{https://www.hse.gov.uk/msd/dse/}{https://www.hse.gov.uk/msd/dse/}
+
+
+
+\section*{Licence}
+This Latex class, template and it's accompanying files collectively form the software known as Grey Wolf's Scouts Activity Template. Files from \href{https://github.com/nimpo/GreyWolfsScoutsBeamerTheme}{Grey Wolf's Scouts Beamer Theme} have been used here too.
+
+\subsection*{Scout Branding}
+The design follows the Scout Association's Branding template: \href{https://scoutsbrand.org.uk/catalogue/item/ms-word-document-template-activity}{ms-word-document-template-activity} and \href{https://docs.scoutsbrand.org.uk/guidelines.pdf}{guidelines} to best efforts.
+
+\subsection*{Fonts}
+The fonts chosen and supplied for use in this project are those specified by The Scout Association's branding guidelines: the Nunito Sans family has been chosen because it can be used at no cost and suits the chosen style.
+
+Nunito Sans is distributed by Google as a TrueType Font and is freely
+available under the terms of the SIL Open Font License licence
+See:\\\href{https://fonts.google.com/specimen/Nunito+Sans\#license}{https://fonts.google.com/specimen/Nunito+Sans\#license}\\and\\\href{https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL}{https://scripts.sil.org/cms/scripts/page.php?site\_id=nrsi\&id=OFL}
+
+It was necessary to create a modified version of the Nunito Sans TTF to
+enable them to work with this software.
+\begin{itemize}
+\item Downgrade the OS/2 table
+\item Convert to Adobe Type 1 postscript in order to create the TFM files
+\end{itemize}
+The Derived TTF files are used in the output PDF.
+
+\subsection*{Images}
+Included in Grey Wolf's Scouts Activity Template's distribution are images of badges derived from those available on the \href{https://www.scouts.org.uk}{www.scouts.org.uk} and the various badge sponsors at the time of writing.
+
+Also included are the Scout Logos. The permitted use of the various Scout Logos is defined in the \href{https://www.scouts.org.uk/por/14-other-matters/rule-147-protected-scout-logos-names-badges-and-awards/}{Scout POR: Rule 147}.
+
+\subsection*{This PDF Document}
+This compiled PDF document is licensed for distribution under the creative commons \href{https://creativecommons.org/licenses/by-sa/4.0/}{Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) licence}.
+
+\subsection*{Grey Wolf's Scouts Activity Template.}
+Grey Wolf's Scouts Activity Template software is licensed under the terms of the GNU General Public License. I include a copy of the LICENCE/LICENSE verbatim below.  
+
+\begin{verbatim}
+%% Copyright 2022 Mike Jones, <dr.mike.jones@gmail.com>
+%% AKA Grey Wolf <mike.jones@mansouthscouts.org>
+%% AKA Akela <mike.jones@mansouthscouts.org>
+%% [23rd Manchester (Birch with Fallowfield)]
+%% Scout Membership number: 12114313
+%
+% This file is part of Grey Wolf's Scouts Activity Template.
+%
+% Grey Wolf's Scouts Activity Template is free software: you can redistribute
+% it and/or modify it under the terms of the GNU General Public License 
+% as published by the Free Software Foundation, either version 3 of the
+% License, or (at your option) any later version.
+%
+% Grey Wolf's Scouts Activity Template is distributed in the hope that it will
+% be useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+% of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+% General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with Grey Wolf's Scouts Activity Template.  If not, see 
+% <https://www.gnu.org/licenses/>.
+\end{verbatim}
+
+
+
+\section*{Here's a SummaryBox example}
+\begin{SummaryBox}
+This is an example of the alternative to the {\tt \textbackslash{}SummaryImageBox} environment used on the first page.
+\par \lipsum[1]
+\SummaryBoxSep
+\fleur[width=\textwidth,colour=ScoutPurple]
+\par
+\vspace{5mm}
+\lipsum[2]
+\end{SummaryBox}
+\clearpage
+
+
+
+\section{Badge Names}
+\label{badges}
+\subsection*{List of keys accepted by \textbackslash{}activitypart[key=text,\ldots]\{\}}
+\vspace{-5mm}
+\begin{multicols}{2}
+\footnotesize
+\badgelist
+\end{multicols}
+\end{document}
